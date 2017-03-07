@@ -51,16 +51,16 @@ head.appendChild(style);
 }());
 
 
-(function swich_button(){
-     // appending a CSS stylesheet to head of webpage
-     var button = document.createElement('button');
-     // button.onclick = ; 
-     button.type = "button";
-     // appending a div to body of webpage
-     var body = document.getElementsByTagName('body')[0];
-     var css_container = document.createElement('div');
-     css_container.id = 'css-container';
-     body.appendChild(css_container);
-     //injecting html code
-     document.getElementsByTagName('css_container').appendChild(button); = button;
-}());
+// (function swich_button(){
+//      // appending a CSS stylesheet to head of webpage
+//      var button = document.createElement('button');
+//      // button.onclick = ; 
+//      button.type = "button";
+//      // appending a div to body of webpage
+//      var body = document.getElementsByTagName('body')[0];
+//      var css_container = document.createElement('div');
+//      css_container.id = 'css-container';
+//      body.appendChild(css_container);
+//      //injecting html code
+//      document.getElementsByTagName('css_container').appendChild(button); = button;
+// }());
