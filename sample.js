@@ -26,10 +26,10 @@
 
 (function () { 
 // the css we are going to inject
-var css = 'html {-webkit-filter: invert(50%);' +
-    '-moz-filter: invert(50%);' + 
-    '-o-filter: invert(50%);' + 
-    '-ms-filter: invert(50%); }',
+var css = 'html {-webkit-filter: invert(30%);' +
+    '-moz-filter: invert(30%);' + 
+    '-o-filter: invert(30%);' + 
+    '-ms-filter: invert(30%); }',
 
 head = document.getElementsByTagName('head')[0],
 style = document.createElement('style');
