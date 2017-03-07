@@ -34,7 +34,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
      var div = document.createElement('div');
      // appending a div to body of webpage
      var body = document.getElementsByTagName('body')[0];
-     div.id = 'translate';
+     div.id = 'google_translate_element';
      body.appendChild(div);
 }());
 
