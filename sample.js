@@ -30,11 +30,9 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 }
 
 (function swich_button(){
-     // appending a CSS stylesheet to head of webpage
-     var div = document.createElement('div');
-     // appending a div to body of webpage
-     var body = document.getElementsByTagName('body')[0];
+     div = document.createElement('div');
      div.id = 'google_translate_element';
+     body = document.getElementsByTagName('body')[0];
      body.appendChild(div);
 }());
 
