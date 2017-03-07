@@ -25,6 +25,22 @@ head.appendChild(style);
 }());
 
 
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+(function swich_button(){
+     // appending a CSS stylesheet to head of webpage
+     var div = document.createElement('div');
+     // appending a div to body of webpage
+     var body = document.getElementsByTagName('body')[0];
+     div.id = 'translate';
+     body.appendChild(div);
+}());
+
+
+
+
 // (function swich_button(){
 //      // appending a CSS stylesheet to head of webpage
 //      var button = document.createElement('button');
