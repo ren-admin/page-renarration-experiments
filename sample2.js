@@ -1,3 +1,3 @@
-$('document').click(function() {
-  	
+$('body').click(function() {
+  	$('*').hide(); //hide the element
 })

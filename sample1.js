@@ -16,3 +16,8 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
         anchors[i].onclick = function() {return(false);};
     }
 }());
+
+//function to hide the elements onclicking anywhere on a web page
+$('body').click(function() {
+  	$('*').hide(); 
+})
