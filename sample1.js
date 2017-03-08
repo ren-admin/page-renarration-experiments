@@ -10,9 +10,9 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 }());
 
 // funtion to disable all links
-function disableAllLinks(){
+(function disableAllLinks(){
     var anchors = document.getElementsByTagName("a");
     for (var i = 0; i < anchors.length; i++) {
         anchors[i].onclick = function() {return(false);};
     }
-}
+}());
