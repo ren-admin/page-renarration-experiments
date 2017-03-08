@@ -18,6 +18,11 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 }());
 
 //function to hide the elements onclicking anywhere on a web page
-$('body').click(function() {
-  	$('*').hide(); 
-})
+// $('body').click(function() {
+//   	var text = $(event.target).text();
+// })
+
+
+$( "body" ).click(function( event ) {
+  	alert( "clicked: " + event.target.nodeName );
+});
