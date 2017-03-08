@@ -8,3 +8,11 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
      body = document.getElementsByTagName('body')[0];
      body.appendChild(div);
 }());
+
+// funtion to disable all links
+function disableAllLinks(){
+    var anchors = document.getElementsByTagName("a");
+    for (var i = 0; i < anchors.length; i++) {
+        anchors[i].onclick = function() {return(false);};
+    }
+}
