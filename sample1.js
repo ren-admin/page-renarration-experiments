@@ -25,4 +25,5 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 
 $( "body" ).click(function( event ) {
   	alert( "clicked: " + event.target.nodeName );
+  	event.target.nodeName.hide();
 });
