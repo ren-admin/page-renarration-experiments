@@ -113,8 +113,8 @@ $("body").click(function(event){
 });
 
 
-$('img').each(function () {
-  $(this).replaceWith(
-    $(this).attr('alt')
-  );
-});
+// $('img').each(function () {
+//   $(this).replaceWith(
+//     $(this).attr('alt')
+//   );
+// });
