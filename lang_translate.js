@@ -100,8 +100,8 @@ document.querySelector('#translate').addEventListener('click', function() {
                 //text= json.text[0];
                  if (document.selection && document.selection.createRange) {
                       range = document.selection.createRange();
-                      // range.text = json.text[0];
-                      range.pasteHTML(html);
+                      //range.text = json.text[0];
+                      range.pasteHTML(json.text[0]);
                   }
             }
             else {
