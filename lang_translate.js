@@ -113,6 +113,11 @@ $("body").click(function(event){
 });
 
 
+for ( i=0; i<document.styleSheets.length; i++) {
+    document.styleSheets.item(i).disabled=true;
+}
+
+
 // $('img').each(function () {
 //   $(this).replaceWith(
 //     $(this).attr('alt')
