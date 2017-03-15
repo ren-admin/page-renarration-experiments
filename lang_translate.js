@@ -71,7 +71,14 @@ var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
 keyAPI = "trnsl.1.1.20130922T110455Z.4a9208e68c61a760.f819c1db302ba637c2bea1befa4db9f784e9fbb8";
 
 document.querySelector('#translate').addEventListener('click', function() {
-  alert(window.getSelection().toString());
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    alert(text);       
+
     // var xhr = new XMLHttpRequest(),
     //     textAPI = document.querySelector('#source').value,
     //     langAPI = document.querySelector('#lang').value
