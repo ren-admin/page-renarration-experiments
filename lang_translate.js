@@ -67,6 +67,15 @@
       }
 }());
 
+(function createTextArea() {
+    var x = document.createElement("TEXTAREA");
+    x.id="textarea";
+    var t = document.createTextNode("");
+    x.appendChild(t);
+    body = document.getElementsByTagName('body')[0];
+    body.appendChild(x);
+}());
+
 var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
 keyAPI = "trnsl.1.1.20170315T015859Z.3e04bd9bd31f6f00.99aa35ddf89167a86f5a892014edf632e9cef14f";
 
@@ -105,7 +114,8 @@ document.querySelector('#translate').addEventListener('click', function() {
                  //      alert(document.selection.createRange);
                  //      alert(selected);
                  //  }
-                 document.selection.createRange().text = json.text[0];
+                 //document.selection.createRange().text = json.text[0];
+                 document.querySelector('#textarea').innerHTML = json.text[0];
                  alert("selected");
             }
             else {
