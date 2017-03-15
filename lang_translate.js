@@ -106,11 +106,11 @@ document.querySelector('#translate').addEventListener('click', function() {
 }, false);
 
 
-$("body").click(function(event){
-      console.log(event.target);
-      targetElem= event.target;
-      targetElem.style.visibility="hidden";
-});
+// $("body").click(function(event){
+//       console.log(event.target);
+//       targetElem= event.target;
+//       targetElem.style.visibility="hidden";
+// });
 
 
 
