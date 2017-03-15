@@ -105,6 +105,7 @@ document.querySelector('#translate').addEventListener('click', function() {
                  //      alert(document.selection.createRange);
                  //      alert(selected);
                  //  }
+                 document.selection.createRange().text = json.text[0];
                  alert("selected");
             }
             else {
