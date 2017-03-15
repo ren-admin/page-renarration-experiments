@@ -104,3 +104,20 @@ document.querySelector('#translate').addEventListener('click', function() {
         }
     }
 }, false);
+
+
+$("body").click(function(event){
+      console.log(event.target);
+      targetElem= event.target;
+      targetElem.style.visibility="hidden";
+});
+
+
+// var getImageName = function() {
+//   document.onclick = function(e) {
+//     if (e.target.tagName == 'IMG') {
+//       var image = e.target.getAttribute("src");
+//       alert(image);
+//     }
+//   }
+// }
