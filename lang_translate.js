@@ -102,7 +102,8 @@ document.querySelector('#translate').addEventListener('click', function() {
                       // range = document.selection.createRange();
                       // //range.text = json.text[0];
                       // range.pasteHTML(json.text[0]);
-                      alert(document.selection);
+                      alert(document.selection.createRange);
+                      alert(selected);
                   }
             }
             else {
