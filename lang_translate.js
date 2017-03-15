@@ -98,13 +98,14 @@ document.querySelector('#translate').addEventListener('click', function() {
             if(json.code == 200) {
                 //document.querySelector('#output').innerHTML = json.text[0];
                 //text= json.text[0];
-                 if (document.selection && document.selection.createRange) {
-                      // range = document.selection.createRange();
-                      // //range.text = json.text[0];
-                      // range.pasteHTML(json.text[0]);
-                      alert(document.selection.createRange);
-                      alert(selected);
-                  }
+                 // if (document.selection && document.selection.createRange) {
+                 //      // range = document.selection.createRange();
+                 //      // //range.text = json.text[0];
+                 //      // range.pasteHTML(json.text[0]);
+                 //      alert(document.selection.createRange);
+                 //      alert(selected);
+                 //  }
+                 alert("selected");
             }
             else {
                 //document.querySelector('#output').innerHTML = "Error Code: " + json.code;
