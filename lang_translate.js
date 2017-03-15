@@ -98,12 +98,15 @@ document.querySelector('#translate').addEventListener('click', function() {
             if(json.code == 200) {
                 //document.querySelector('#output').innerHTML = json.text[0];
                 //text= json.text[0];
-                range = document.selection.createRange();
-                range.text = json.text[0];
+                 if (document.selection && document.selection.createRange) {
+                      range = document.selection.createRange();
+                      range.text = json.text[0];
+                  }
             }
             else {
                 //document.querySelector('#output').innerHTML = "Error Code: " + json.code;
-                text= "Error Code: " + json.code;
+                // text= "Error Code: " + json.code;
+                alert("select text");
             }
         }
     }
