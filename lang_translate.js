@@ -113,11 +113,8 @@ $("body").click(function(event){
 });
 
 
-// var getImageName = function() {
-//   document.onclick = function(e) {
-//     if (e.target.tagName == 'IMG') {
-//       var image = e.target.getAttribute("src");
-//       alert(image);
-//     }
-//   }
-// }
+$('img').each(function () {
+  $(this).replaceWith(
+    $(this).attr('alt')
+  );
+});
