@@ -68,7 +68,7 @@
 }());
 
 var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
-keyAPI = "trnsl.1.1.20130922T110455Z.4a9208e68c61a760.f819c1db302ba637c2bea1befa4db9f784e9fbb8";
+keyAPI = "trnsl.1.1.20170315T015859Z.3e04bd9bd31f6f00.99aa35ddf89167a86f5a892014edf632e9cef14f";
 
 document.querySelector('#translate').addEventListener('click', function() {
     var text = "";
