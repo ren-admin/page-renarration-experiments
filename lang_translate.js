@@ -68,28 +68,29 @@
 }());
 
 (function createTextArea() {
-    var x = document.createElement("TEXTAREA");
-    x.id="textarea";
+    var output = document.createElement("TEXTAREA");
+    output.id="textarea";
     var t = document.createTextNode("");
-    x.appendChild(t);
+    output.appendChild(t);
     body = document.getElementsByTagName('body')[0];
-    body.appendChild(x);
+    body.appendChild(output);
 }());
 
 var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
 keyAPI = "trnsl.1.1.20170315T015859Z.3e04bd9bd31f6f00.99aa35ddf89167a86f5a892014edf632e9cef14f";
 
 document.querySelector('#translate').addEventListener('click', function() {
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
-    alert(text);       
+           
 
     var xhr = new XMLHttpRequest(),
         // textAPI = document.querySelector('#source').value,
+        var text = "";
+        if (window.getSelection) {
+            text = window.getSelection().toString();
+        } else if (document.selection && document.selection.type != "Control") {
+            text = document.selection.createRange().text;
+        }
+        alert(text);
         langAPI = document.querySelector('#lang').value
         alert(langAPI)
         data = "key="+keyAPI+"&text="+text+"&lang="+langAPI;
