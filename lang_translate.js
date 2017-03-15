@@ -85,7 +85,7 @@ document.querySelector('#translate').addEventListener('click', function() {
         alert(langAPI)
         data = "key="+keyAPI+"&text="+text+"&lang="+langAPI;
         alert(data)
-        
+
     xhr.open("POST",url,true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send(data);
@@ -97,7 +97,9 @@ document.querySelector('#translate').addEventListener('click', function() {
             var json = JSON.parse(res);
             if(json.code == 200) {
                 //document.querySelector('#output').innerHTML = json.text[0];
-                text= json.text[0];
+                //text= json.text[0];
+                range = document.selection.createRange();
+                range.text = json.text[0];
             }
             else {
                 //document.querySelector('#output').innerHTML = "Error Code: " + json.code;
