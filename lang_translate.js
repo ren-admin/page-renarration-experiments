@@ -85,6 +85,7 @@ document.querySelector('#translate').addEventListener('click', function() {
         alert(langAPI)
         data = "key="+keyAPI+"&text="+text+"&lang="+langAPI;
         alert(data)
+        
     xhr.open("POST",url,true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.send(data);
