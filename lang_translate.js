@@ -1,3 +1,11 @@
+// funtion to disable all links
+(function disableAllLinks(){
+    var anchors = document.getElementsByTagName("a");
+    for (var i = 0; i < anchors.length; i++) {
+        anchors[i].onclick = function() {return(false);};
+    }
+}());
+
 function googleTranslateElementInit() {
 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
@@ -7,14 +15,6 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
      div.id = 'google_translate_element';
      body = document.getElementsByTagName('body')[0];
      body.appendChild(div);
-}());
-
-// funtion to disable all links
-(function disableAllLinks(){
-    var anchors = document.getElementsByTagName("a");
-    for (var i = 0; i < anchors.length; i++) {
-        anchors[i].onclick = function() {return(false);};
-    }
 }());
 
 (function Translatebutton(){
@@ -28,8 +28,8 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 
 (function selectList(){
       //Create array of options to be added
-      var array = ["telugu","hindi"];
-      var options = ["tg", "hi"];
+      var array = ["telugu","hindi", "malayalam"];
+      var options = ["te", "hi", "ml"];
       //Create and append select list
       var selectList = document.createElement("select");
       selectList.setAttribute("id", "lang");
