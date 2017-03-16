@@ -106,18 +106,3 @@ document.querySelector('#translate').addEventListener('click', function() {
 }, false);
 
 
-// $("body").click(function(event){
-//       console.log(event.target);
-//       targetElem= event.target;
-//       targetElem.style.visibility="hidden";
-// });
-
-
-
-
-
-// $('img').each(function () {
-//   $(this).replaceWith(
-//     $(this).attr('alt')
-//   );
-// });
