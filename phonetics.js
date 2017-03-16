@@ -50,26 +50,26 @@ document.querySelector('#Phonetic').addEventListener('click', function() {
     // }
     alert(text);       
 
-    var xhr = new XMLHttpRequest();
-    data = "w="+text;
-    alert(data);
-    xhr.open("POST",url,true);
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xhr.send(data);
-    xhr.onreadystatechange = function() {
-        if (this.readyState==4 && this.status==200) {
-            alert("hello");
-            var res = this.responseText;
-            alert(res);
-            // var json = JSON.parse(res);
-            // if(json.code == 200) {
-            //      document.querySelector('#textarea').innerHTML = json.text[0];
-            //      alert("selected");
-            // }
-            // else {
-            //      document.querySelector('#textarea').innerHTML = "Error Code: " + json.code;
-            // }
-        }
-    }
+    // var xhr = new XMLHttpRequest();
+    // data = "w="+text;
+    // alert(data);
+    // xhr.open("POST",url,true);
+    // xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    // xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    // xhr.send(data);
+    // xhr.onreadystatechange = function() {
+    //     if (this.readyState==4 && this.status==200) {
+    //         alert("hello");
+    //         var res = this.responseText;
+    //         alert(res);
+    //         // var json = JSON.parse(res);
+    //         // if(json.code == 200) {
+    //         //      document.querySelector('#textarea').innerHTML = json.text[0];
+    //         //      alert("selected");
+    //         // }
+    //         // else {
+    //         //      document.querySelector('#textarea').innerHTML = "Error Code: " + json.code;
+    //         // }
+    //     }
+    // }
 }, false);
