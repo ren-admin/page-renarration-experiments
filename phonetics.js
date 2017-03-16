@@ -60,8 +60,8 @@ document.querySelector('#Phonetic').addEventListener('click', function() {
     xhr.onreadystatechange = function() {
         if (this.readyState==4 && this.status==200) {
             alert("hello");
-            // var res = this.responseText;
-            // alert(res);
+            var res = this.responseText;
+            alert(res);
             // var json = JSON.parse(res);
             // if(json.code == 200) {
             //      document.querySelector('#textarea').innerHTML = json.text[0];
