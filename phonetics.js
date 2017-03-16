@@ -1,36 +1,3 @@
-var url = "http://www.phonemicchart.com/transcribe/";
-
-document.querySelector('#Phonetic').addEventListener('click', function() {
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
-    alert(text);       
-
-    var xhr = new XMLHttpRequest();
-    data = "w="+text;
-    alert(data);
-    xhr.open("POST",url,true);
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xhr.send(data);
-    xhr.onreadystatechange = function() {
-        if (this.readyState==4 && this.status==200) {
-            var res = this.responseText;
-            alert(res);
-            // var json = JSON.parse(res);
-            // if(json.code == 200) {
-            //      document.querySelector('#textarea').innerHTML = json.text[0];
-            //      alert("selected");
-            // }
-            // else {
-            //      document.querySelector('#textarea').innerHTML = "Error Code: " + json.code;
-            // }
-        }
-    }
-}, false);
-
 (function Translatebutton(){
      button = document.createElement("BUTTON");
      var text = document.createTextNode("Get Phonetic");
@@ -70,3 +37,37 @@ document.querySelector('#Phonetic').addEventListener('click', function() {
 //         }
 //     }
 // }, false);
+
+
+var url = "http://www.phonemicchart.com/transcribe/";
+
+document.querySelector('#Phonetic').addEventListener('click', function() {
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    alert(text);       
+
+    var xhr = new XMLHttpRequest();
+    data = "w="+text;
+    alert(data);
+    xhr.open("POST",url,true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send(data);
+    xhr.onreadystatechange = function() {
+        if (this.readyState==4 && this.status==200) {
+            var res = this.responseText;
+            alert(res);
+            // var json = JSON.parse(res);
+            // if(json.code == 200) {
+            //      document.querySelector('#textarea').innerHTML = json.text[0];
+            //      alert("selected");
+            // }
+            // else {
+            //      document.querySelector('#textarea').innerHTML = "Error Code: " + json.code;
+            // }
+        }
+    }
+}, false);
