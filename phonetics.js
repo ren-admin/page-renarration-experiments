@@ -55,7 +55,7 @@ document.querySelector('#Phonetic').addEventListener('click', function() {
     alert(data);
     xhr.open("POST",url,true);
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
     xhr.send(data);
     xhr.onreadystatechange = function() {
         if (this.readyState==4 && this.status==200) {
