@@ -42,12 +42,12 @@
 var url = "http://www.phonemicchart.com/transcribe/";
 
 document.querySelector('#Phonetic').addEventListener('click', function() {
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
+    var text = "why";
+    // if (window.getSelection) {
+    //     text = window.getSelection().toString();
+    // } else if (document.selection && document.selection.type != "Control") {
+    //     text = document.selection.createRange().text;
+    // }
     alert(text);       
 
     var xhr = new XMLHttpRequest();
