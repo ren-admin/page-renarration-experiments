@@ -42,7 +42,7 @@
 // var url = "http://www.phonemicchart.com/transcribe/";
 var url = "//localhost:5000/phonetic-trans"
 document.querySelector('#Phonetic').addEventListener('click', function() {
-    //var text = "why";
+    var text = "why";
     // if (window.getSelection) {
     //     text = window.getSelection().toString();
     // } else if (document.selection && document.selection.type != "Control") {
