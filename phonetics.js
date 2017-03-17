@@ -42,13 +42,12 @@
 // var url = "http://www.phonemicchart.com/transcribe/";
 var url = "//localhost:5000/phonetic-trans"
 document.querySelector('#Phonetic').addEventListener('click', function() {
-    var text = "why";
-    // if (window.getSelection) {
-    //     text = window.getSelection().toString();
-    // } else if (document.selection && document.selection.type != "Control") {
-    //     text = document.selection.createRange().text;
-    // }
-    //alert(text);       
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    alert(text);       
 
     var xhr = new XMLHttpRequest();
     //data = "w="+text;
@@ -63,6 +62,7 @@ document.querySelector('#Phonetic').addEventListener('click', function() {
             alert("hello");
             var res = this.responseText;
             alert(res);
+            document.querySelector('#textarea').innerHTML = res;
             // var json = JSON.parse(res);
             // if(json.code == 200) {
             //      document.querySelector('#textarea').innerHTML = json.text[0];
