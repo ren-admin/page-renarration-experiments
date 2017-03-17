@@ -39,24 +39,25 @@
 // }, false);
 
 
-var url = "http://www.phonemicchart.com/transcribe/";
-
+// var url = "http://www.phonemicchart.com/transcribe/";
+var url = "//localhost:5000/phonetic-trans"
 document.querySelector('#Phonetic').addEventListener('click', function() {
-    var text = "why";
+    //var text = "why";
     // if (window.getSelection) {
     //     text = window.getSelection().toString();
     // } else if (document.selection && document.selection.type != "Control") {
     //     text = document.selection.createRange().text;
     // }
-    alert(text);       
+    //alert(text);       
 
     var xhr = new XMLHttpRequest();
-    data = "w="+text;
-    alert(data);
+    //data = "w="+text;
+    //alert(data);
     xhr.open("POST",url,true);
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-    xhr.send(data);
+    xhr.send(JSON.stringify({"sentence":text}));
+    //xhr.send(data);
     xhr.onreadystatechange = function() {
         if (this.readyState==4 && this.status==200) {
             alert("hello");
