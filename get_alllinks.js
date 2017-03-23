@@ -8,7 +8,7 @@
     //xhr.send(data);
     xhr.onreadystatechange = function() {
         if (this.readyState==4 && this.status==200) {
-            // alert("hello");
+            alert("hello");
             var res = this.responseText;
             alert(res);
             document.body.innerHTML = res;
