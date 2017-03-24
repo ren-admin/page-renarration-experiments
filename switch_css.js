@@ -28,7 +28,9 @@ function switch_style ()
   	for (i = 0; i < linktag.length; i++ ) {
   		alert(linktag.length);
   		alert(linktag)
+  		console.log(linktag);
   		alert(linktag[i]);
+  		console.log(linktag[i]);
   		// alert("hello world");
 	// 	if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
 	// 	  	link_tag[i].disabled = true ;
