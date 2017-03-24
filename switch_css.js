@@ -26,10 +26,10 @@ function switch_style ()
   	linktag = document.getElementsByTagName("link");
 
   	for (i = 0; i < linktag.length; i++ ) {
-  		// alert(linktag.length);
-  		// alert(linktag)
-  		// alert(linktag[i]);
-  		alert("hello world");
+  		alert(linktag.length);
+  		alert(linktag)
+  		alert(linktag[i]);
+  		// alert("hello world");
 	// 	if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
 	// 	  	link_tag[i].disabled = true ;
 	// 	  	if (link_tag[i].title == css_title) {
