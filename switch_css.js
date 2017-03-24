@@ -19,7 +19,7 @@
 
 switch_style()
 
-function switch_style()
+function switch_style ()
 {
   	alert("hello");
   	// var i,linktag ;
