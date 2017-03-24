@@ -10,14 +10,4 @@
 	    head.appendChild(link);
 	    link_tags++;
 	}
-	else if(link_tags==1){
-		var link = document.createElement('link');
-	    link.rel  = 'alternative stylesheet';
-	    link.type = 'text/css';
-	    link.href = 'switch2.css';
-	    link.title="switch2"
-	    var head  = document.getElementsByTagName('head')[0];
-	    head.appendChild(link);
-	    link_tags++;
-	}
 }());
