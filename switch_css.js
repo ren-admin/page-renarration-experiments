@@ -23,23 +23,6 @@
 // }());
 
 
-(function (){
-	var i= 0;
-	var links = 2;
-	var link_rel =['stylesheet', 'alternate stylesheet']
-	var css_themes =['switch1.css', 'switch2.css'];
-	var link_title =['switch1', 'switch2'];
-	for(i=0; i<links; i++){
-		link = document.createElement('link');
-	    link.rel  = link_rel[i];
-	    link.type = 'text/css';
-	    link.href = css_themes[i];
-	    link.title= link_title[i];
-	    head  = document.getElementsByTagName('head')[0];
-	    head.appendChild(link);
-	}
-
-}());
 
 // *** TO BE CUSTOMISED ***
 
@@ -102,3 +85,40 @@
 //     }
 //     return '' ;
 // }
+
+
+// This functions creates two links tags to switch the css.
+(function (){
+	var i= 0;
+	var links = 2;
+	var link_rel =['stylesheet', 'alternate stylesheet']
+	var css_themes =['switch1.css', 'switch2.css'];
+	var link_title =['switch1', 'switch2'];
+	for(i=0; i<links; i++){
+		
+		link = document.createElement('link');
+	    link.rel  = link_rel[i];
+	    link.type = 'text/css';
+	    link.href = css_themes[i];
+	    link.title= link_title[i];
+	    head  = document.getElementsByTagName('head')[0];
+	    head.appendChild(link);
+	}
+
+}());
+
+// Creates buttons to switch the css on click event. 
+(function createButton(){
+	var i= 0;
+	var buttons = 2;
+	var text_node = ['Invert_css', 'Change_font'];
+	var id = ['invert_css', 'change_font'];
+	for(i=0; i<buttons; i++){
+		button_tag = document.createElement("BUTTON");
+		text = document.createTextNode(text_node[i]);
+		button_tag.id = id[i];
+		button_tag.appendChild(text);
+		body = document.getElementsByTagName('body')[0];
+		body.appendChild(button_tag);
+	}
+}());
