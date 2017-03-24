@@ -1,12 +1,12 @@
-// (function (){
-// 		link = document.createElement('link');
-// 	    link.rel  = 'stylesheet';
-// 	    link.type = 'text/css';
-// 	    link.href = 'switch1.css';
-// 	    link.title= 'switch1'
-// 	    head  = document.getElementsByTagName('head')[0];
-// 	    head.appendChild(link);
-// }());
+(function (){
+		link = document.createElement('link');
+	    link.rel  = 'stylesheet';
+	    link.type = 'text/css';
+	    link.href = 'switch1.css';
+	    link.title= 'switch1';
+	    head  = document.getElementsByTagName('head')[0];
+	    head.appendChild(link);
+}());
 
 // *** TO BE CUSTOMISED ***
 
@@ -17,15 +17,16 @@
 // *** END OF CUSTOMISABLE SECTION ***
 // You do not need to customise anything below this line
 
-switch_style()
+switch_style('switch1')
 
 function switch_style ()
 {
-	alert("hello");
-  // var i, link_tag ;
-  // link_tag = document.getElementsByTagName("link") ;
-  // for (i = 0, i < link_tag.length ; i++ ) {
-
+  	alert("hello");
+  	var i, link_tag ;
+  	link_tag = document.getElementsByTagName("link") ;
+  	for (i = 0, i < link_tag.length ; i++ ) {
+  		alert(link_tag.length);
+  		alert(link_tag[i]);
 		// if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
 		//   	link_tag[i].disabled = true ;
 		//   	if (link_tag[i].title == css_title) {
@@ -33,9 +34,8 @@ function switch_style ()
 		//     	alert(link_tag[i])
 		//   	}
 		// }
-
-  //   //set_cookie( style_cookie_name, css_title,style_cookie_duration, style_domain );
-  // }
+	//set_cookie( style_cookie_name, css_title,style_cookie_duration, style_domain );
+  	}
 }
 
 
