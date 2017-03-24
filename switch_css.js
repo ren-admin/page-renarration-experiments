@@ -17,9 +17,9 @@
 // *** END OF CUSTOMISABLE SECTION ***
 // You do not need to customise anything below this line
 
-switch_style('switch1')
+switch_style()
 
-function switch_style (css_title)
+function switch_style ()
 {
   	alert("hello");
   	var i, link_tag ;
