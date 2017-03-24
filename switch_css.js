@@ -1,25 +1,44 @@
+// (function (){
+// 	link_no = 0;
+// 	if(link_no == 0){
+// 		link = document.createElement('link');
+// 	    link.rel  = 'stylesheet';
+// 	    link.type = 'text/css';
+// 	    link.href = 'switch1.css';
+// 	    link.title= 'switch1';
+// 	    head  = document.getElementsByTagName('head')[0];
+// 	    head.appendChild(link);
+// 	    link_no++;
+// 	}
+// 	else if(link_no == 1){
+// 		link = document.createElement('link');
+// 	    link.rel  = 'alternate stylesheet';
+// 	    link.type = 'text/css';
+// 	    link.href = 'switch2.css';
+// 	    link.title= 'switch2';
+// 	    head  = document.getElementsByTagName('head')[0];
+// 	    head.appendChild(link);
+// 	    link_no++;
+// 	}
+// }());
+
+
 (function (){
-	link_no = 0;
-	if(link_no == 0){
+	var i= 0;
+	var links = 2;
+	var link_rel =['stylesheet', 'alternate stylesheet']
+	var css_themes =['switch1.css', 'switch2.css'];
+	var link_title =['switch1', 'switch2'];
+	for(i=0; i<links; i++){
 		link = document.createElement('link');
-	    link.rel  = 'stylesheet';
+	    link.rel  = link_rel[i];
 	    link.type = 'text/css';
-	    link.href = 'switch1.css';
-	    link.title= 'switch1';
+	    link.href = css_themes[i];
+	    link.title= link_title[i];
 	    head  = document.getElementsByTagName('head')[0];
 	    head.appendChild(link);
-	    link_no++;
 	}
-	else if(link_no == 1){
-		link = document.createElement('link');
-	    link.rel  = 'alternative stylesheet';
-	    link.type = 'text/css';
-	    link.href = 'switch2.css';
-	    link.title= 'switch2';
-	    head  = document.getElementsByTagName('head')[0];
-	    head.appendChild(link);
-	    link_no++;
-	}
+
 }());
 
 // *** TO BE CUSTOMISED ***
