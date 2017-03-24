@@ -10,7 +10,7 @@
 	    head.appendChild(link);
 	    link_no++;
 	}
-	else{
+	else if(link_no == 1){
 		link = document.createElement('link');
 	    link.rel  = 'alternative stylesheet';
 	    link.type = 'text/css';
