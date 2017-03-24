@@ -23,7 +23,7 @@ function switch_style ()
 {
   	alert("hello");
   	var i,linktag;
-  	linktag = document.getElementsByTagName("link") ;
+  	linktag = document.getElementsByTagName("link");
 
   	for (i = 0, i < linktag.length ; i++ ) {
   		// alert(linktag.length);
