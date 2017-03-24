@@ -26,7 +26,7 @@ function switch_style()
   	linktag = document.getElementsByTagName("link") ;
 
   	for (i = 0, i < linktag.length ; i++ ) {
-  		alert(linktag.length);
+  		// alert(linktag.length);
   		// alert(linktag)
   		// alert(linktag[i]);
   		alert("hello world");
