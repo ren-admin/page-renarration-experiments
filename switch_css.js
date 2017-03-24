@@ -1,12 +1,12 @@
-// (function (){
-// 		link = document.createElement('link');
-// 	    link.rel  = 'stylesheet';
-// 	    link.type = 'text/css';
-// 	    link.href = 'switch1.css';
-// 	    link.title= 'switch1';
-// 	    head  = document.getElementsByTagName('head')[0];
-// 	    head.appendChild(link);
-// }());
+(function (){
+		link = document.createElement('link');
+	    link.rel  = 'stylesheet';
+	    link.type = 'text/css';
+	    link.href = 'switch1.css';
+	    link.title= 'switch1';
+	    head  = document.getElementsByTagName('head')[0];
+	    head.appendChild(link);
+}());
 
 // *** TO BE CUSTOMISED ***
 
@@ -26,19 +26,14 @@ function switch_style ()
   	linktag = document.getElementsByTagName("link");
 
   	for (i = 0; i < linktag.length; i++ ) {
-  		alert(linktag.length);
-  		alert(linktag)
-  		console.log(linktag);
-  		alert(linktag[i]);
   		console.log(linktag[i]);
-  		// alert("hello world");
-	// 	if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
-	// 	  	link_tag[i].disabled = true ;
-	// 	  	if (link_tag[i].title == css_title) {
-	// 	    	link_tag[i].disabled = false ;
-	// 	    	alert(link_tag[i])
-	// 	  	}
-	// 	}
+		// if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
+		//   	link_tag[i].disabled = true ;
+		//   	if (link_tag[i].title == css_title) {
+		//     	link_tag[i].disabled = false ;
+		//     	alert(link_tag[i])
+		//   	}
+		// }
 	// set_cookie( style_cookie_name, css_title,style_cookie_duration, style_domain );
   	}
 }
