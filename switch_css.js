@@ -118,6 +118,7 @@
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
 		//button_tag.addEventListener("click", switch_style(link_title[i]) );
+		alert('hello');
 		alert(link_title[i]);
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
