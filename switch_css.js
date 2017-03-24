@@ -131,18 +131,17 @@
 
 // This functions creates two links tags to switch the css.
 function switch_style (css_title)
-{
-	alert("hello world");
+{	
   	var i;
   	var linktag = document.getElementsByTagName("link");
 
   	for (i = 0; i < linktag.length; i++ ) {
-		if ((linktag[i].rel.indexOf( "stylesheet" ) != -1) &&linktag[i].title) {
-		  	linktag[i].disabled = true ;
+		// if ((linktag[i].rel.indexOf( "stylesheet" ) != -1) &&linktag[i].title) {
+		//   	linktag[i].disabled = true ;
 		  	if (linktag[i].title == css_title) {
 		    	linktag[i].disabled = false ;
 		  	}
-		}
+		// }
 	//set_cookie( style_cookie_name, css_title, style_cookie_duration, style_domain );
   	}
 }
