@@ -19,7 +19,7 @@
 
 switch_style('switch1')
 
-function switch_style ()
+function switch_style (css_title)
 {
   	alert("hello");
   	var i, link_tag ;
