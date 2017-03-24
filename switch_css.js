@@ -118,14 +118,20 @@
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
 		button_tag.addEventListener("click", switch_style(link_title[i]), false);
+		button_tag.addEventListener("click", hello, false);
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
 	}
 }());
 
-var style_cookie_name = "style" ;
-var style_cookie_duration = 30 ;
-var style_domain = "www.vlabs.ac.in" ;
+
+function hello() {
+	alert('hi');
+}
+
+// var style_cookie_name = "style" ;
+// var style_cookie_duration = 30 ;
+// var style_domain = "www.vlabs.ac.in" ;
 
 // This functions creates two links tags to switch the css.
 function switch_style (css_title)
