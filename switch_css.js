@@ -1,11 +1,25 @@
 (function (){
+	link_no = 0;
+	if(link_no == 0){
 		link = document.createElement('link');
 	    link.rel  = 'stylesheet';
 	    link.type = 'text/css';
 	    link.href = 'switch1.css';
-	    // link.title= 'switch1';
+	    link.title= 'switch1';
 	    head  = document.getElementsByTagName('head')[0];
 	    head.appendChild(link);
+	    link_no++;
+	}
+	else{
+		link = document.createElement('link');
+	    link.rel  = 'alternative stylesheet';
+	    link.type = 'text/css';
+	    link.href = 'switch2.css';
+	    link.title= 'switch2';
+	    head  = document.getElementsByTagName('head')[0];
+	    head.appendChild(link);
+	    link_no++;
+	}
 }());
 
 // *** TO BE CUSTOMISED ***
