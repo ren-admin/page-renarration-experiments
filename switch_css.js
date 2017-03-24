@@ -19,24 +19,25 @@
 
 switch_style()
 
-function switch_style ()
+function switch_style()
 {
   	alert("hello");
   	var i, link_tag ;
   	link_tag = document.getElementsByTagName("link") ;
-  	for (i = 0, i < link_tag.length ; i++ ) {
-  		alert(link_tag.length);
-  		alert(link_tag[i]);
-  		alert("hello world");
-	// 	if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
-	// 	  	link_tag[i].disabled = true ;
-	// 	  	if (link_tag[i].title == css_title) {
-	// 	    	link_tag[i].disabled = false ;
-	// 	    	alert(link_tag[i])
-	// 	  	}
-	// 	}
-	// set_cookie( style_cookie_name, css_title,style_cookie_duration, style_domain );
-  	}
+  	alert(link_tag);
+ //  	for (i = 0, i < link_tag.length ; i++ ) {
+ //  		alert(link_tag.length);
+ //  		alert(link_tag[i]);
+ //  		alert("hello world");
+	// // 	if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
+	// // 	  	link_tag[i].disabled = true ;
+	// // 	  	if (link_tag[i].title == css_title) {
+	// // 	    	link_tag[i].disabled = false ;
+	// // 	    	alert(link_tag[i])
+	// // 	  	}
+	// // 	}
+	// // set_cookie( style_cookie_name, css_title,style_cookie_duration, style_domain );
+ //  	}
 }
 
 
