@@ -25,20 +25,20 @@ function switch_style()
   	var i,linktag ;
   	linktag = document.getElementsByTagName("link") ;
 
-  	for (i = 0, i < linktag.length ; i++ ) {
-  		// alert(linktag.length);
-  		// alert(linktag)
-  		// alert(linktag[i]);
-  		alert("hello world");
-	// 	if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
-	// 	  	link_tag[i].disabled = true ;
-	// 	  	if (link_tag[i].title == css_title) {
-	// 	    	link_tag[i].disabled = false ;
-	// 	    	alert(link_tag[i])
-	// 	  	}
-	// 	}
-	// set_cookie( style_cookie_name, css_title,style_cookie_duration, style_domain );
-  	}
+ //  	for (i = 0, i < linktag.length ; i++ ) {
+ //  		// alert(linktag.length);
+ //  		// alert(linktag)
+ //  		// alert(linktag[i]);
+ //  		alert("hello world");
+	// // 	if ((link_tag[i].rel.indexOf( "stylesheet" ) != -1) &&link_tag[i].title) {
+	// // 	  	link_tag[i].disabled = true ;
+	// // 	  	if (link_tag[i].title == css_title) {
+	// // 	    	link_tag[i].disabled = false ;
+	// // 	    	alert(link_tag[i])
+	// // 	  	}
+	// // 	}
+	// // set_cookie( style_cookie_name, css_title,style_cookie_duration, style_domain );
+ //  	}
 }
 
 
