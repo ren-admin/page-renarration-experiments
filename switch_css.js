@@ -1,4 +1,4 @@
-var link_title =['switch1', 'switch2'];
+//var link_title =['switch1', 'switch2'];
 // This functions creates two links tags, used to switch the css.
 (function insertStylesheets(){
 	var i= 0;
@@ -6,7 +6,7 @@ var link_title =['switch1', 'switch2'];
 	var link_rel =['stylesheet', 'alternate stylesheet']
 	var css_themes =['//rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
 	'//rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
-	//link_title =['switch1', 'switch2'];
+	var link_title =['switch1', 'switch2'];
 	for(i=0; i<css_links; i++){
 		
 		link = document.createElement('link');
@@ -32,6 +32,7 @@ var link_title =['switch1', 'switch2'];
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
 		button_tag.addEventListener("click", function(){
+			var link_title =['switch1', 'switch2'];
 			alert(link_title[i]);
 			switch_style(link_title[i]) 
 		});
