@@ -91,8 +91,8 @@
 	var i= 0;
 	var css_links = 2;
 	var link_rel =['stylesheet', 'alternate stylesheet']
-	var css_themes =['//github.com/sadhanareddy/css-changer-tool/blob/master/switch1.css',
-	'//github.com/sadhanareddy/css-changer-tool/blob/master/switch2.css'];
+	var css_themes =['//rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
+	'//rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
 	link_title =['switch1', 'switch2'];
 	for(i=0; i<css_links; i++){
 		
