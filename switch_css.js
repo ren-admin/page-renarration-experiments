@@ -51,7 +51,7 @@ function hello(){
 
 function switch_style (css_title)
 {	
-	alert("hello world");
+	alert(css_title);
   	var i;
   	var linktag = document.getElementsByTagName("link");
 
