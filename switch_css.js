@@ -184,6 +184,6 @@ function switch_style (css_title)
 
 
 window.onload = function () {
-      //alert("LOADED!");
-      set_style_from_cookie()
+      alert("LOADED!");
+      //set_style_from_cookie()
 }
