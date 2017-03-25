@@ -1,4 +1,5 @@
-//var link_title =['switch1', 'switch2'];
+var link_title =['switch1', 'switch2'];
+var i = 0;
 // This functions creates two links tags, used to switch the css.
 (function insertStylesheets(){
 	var i= 0;
@@ -22,7 +23,7 @@
 
 // Creates buttons to switch the css on click event. 
 (function createButton(){
-	i= 0;
+	var i= 0;
 	var buttons = 2;
 	var text_node = ['Invert_css', 'Change_font'];
 	var id = ['invert_css', 'change_font'];
