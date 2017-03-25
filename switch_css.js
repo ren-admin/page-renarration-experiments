@@ -1,4 +1,3 @@
-//var link_title =['switch1', 'switch2'];
 // This functions creates two links tags, used to switch the css.
 (function insertStylesheets(){
 	var i= 0;
@@ -31,9 +30,7 @@
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-		button_tag.addEventListener("click", function(){
-			var i = 0;
-			var link_title =['switch1', 'switch2'];
+		button_tag.addEventListener("click", function(link_title, i){
 			alert(link_title[i]);
 			switch_style(link_title[i]) 
 		});
