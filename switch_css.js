@@ -126,9 +126,9 @@
 }());
 
 
-// var style_cookie_name = "style" ;
-// var style_cookie_duration = 30 ;
-// var style_domain = "www.vlabs.ac.in" ;
+var style_cookie_name = "style" ;
+var style_cookie_duration = 30 ;
+var style_domain = "www.vlabs.ac.in" ;
 
 
 function switch_style (css_title)
