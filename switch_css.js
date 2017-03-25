@@ -134,7 +134,6 @@ document.getElementById('change_font').onclick = switch_style('switch2');
 
 function switch_style (css_title)
 {	
-	alert("hello");
   	var i;
   	var linktag = document.getElementsByTagName("link");
 
