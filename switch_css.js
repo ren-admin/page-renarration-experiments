@@ -33,8 +33,8 @@ var link_title=[];
 		button_tag.appendChild(text);
 
 		button_tag.addEventListener("click", function(){
-			link_title =['switch1', 'switch2'];
-			switch_style('switch2')
+			alert(link_title[i]);
+			switch_style(link_title[i]) 
 		});
 		//button_tag.addEventListener("click", hello, false);
 		body = document.getElementsByTagName('body')[0];
