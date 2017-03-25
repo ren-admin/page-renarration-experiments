@@ -1,12 +1,12 @@
 var link_title =['switch1', 'switch2'];
 // This functions creates two links tags, used to switch the css.
 (function insertStylesheets(){
-	i= 0;
+	var i= 0;
 	var css_links = 2;
 	var link_rel =['stylesheet', 'alternate stylesheet']
 	var css_themes =['//rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
 	'//rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
-	link_title =['switch1', 'switch2'];
+	//link_title =['switch1', 'switch2'];
 	for(i=0; i<css_links; i++){
 		
 		link = document.createElement('link');
@@ -22,7 +22,7 @@ var link_title =['switch1', 'switch2'];
 
 // Creates buttons to switch the css on click event. 
 (function createButton(){
-	i= 0;
+	var i= 0;
 	var buttons = 2;
 	var text_node = ['Invert_css', 'Change_font'];
 	var id = ['invert_css', 'change_font'];
