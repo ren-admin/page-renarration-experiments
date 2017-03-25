@@ -86,14 +86,14 @@
 //     return '' ;
 // }
 
-
-(function (){
+// This functions creates two links tags, used to switch the css.
+(function insertStylesheets(){
 	var i= 0;
-	var links = 2;
+	var css_links = 2;
 	var link_rel =['stylesheet', 'alternate stylesheet']
 	var css_themes =['switch1.css', 'switch2.css'];
 	link_title =['switch1', 'switch2'];
-	for(i=0; i<links; i++){
+	for(i=0; i<css_links; i++){
 		
 		link = document.createElement('link');
 	    link.rel  = link_rel[i];
@@ -129,22 +129,22 @@
 // var style_cookie_duration = 30 ;
 // var style_domain = "www.vlabs.ac.in" ;
 
-// This functions creates two links tags to switch the css.
-function switch_style (css_title)
-{	
-  	var i;
-  	var linktag = document.getElementsByTagName("link");
 
-  	for (i = 0; i < linktag.length; i++ ) {
-		// if ((linktag[i].rel.indexOf( "stylesheet" ) != -1) &&linktag[i].title) {
-		//   	linktag[i].disabled = true ;
-		  	if (linktag[i].title == css_title) {
-		    	linktag[i].disabled = false ;
-		  	}
-		// }
-	//set_cookie( style_cookie_name, css_title, style_cookie_duration, style_domain );
-  	}
-}
+// function switch_style (css_title)
+// {	
+//   	var i;
+//   	var linktag = document.getElementsByTagName("link");
+
+//   	for (i = 0; i < linktag.length; i++ ) {
+// 		// if ((linktag[i].rel.indexOf( "stylesheet" ) != -1) &&linktag[i].title) {
+// 		//   	linktag[i].disabled = true ;
+// 		  	if (linktag[i].title == css_title) {
+// 		    	linktag[i].disabled = false ;
+// 		  	}
+// 		// }
+// 	//set_cookie( style_cookie_name, css_title, style_cookie_duration, style_domain );
+//   	}
+// }
 
 // function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain )
 // {
