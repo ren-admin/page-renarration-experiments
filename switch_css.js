@@ -120,13 +120,13 @@
 		button_tag.appendChild(text);
 		// button_tag.addEventListener("click", switch_style(link_title[i]), false);
 		//button_tag.addEventListener("click", hello, false);
-		button_tag.onclick = switch_style(link_title[i]);
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
 	}
 }());
 
-
+document.getElementById('invert_css').onclick = switch_style('switch1');
+document.getElementById('change_font').onclick = switch_style('switch2');
 // var style_cookie_name = "style" ;
 // var style_cookie_duration = 30 ;
 // var style_domain = "www.vlabs.ac.in" ;
