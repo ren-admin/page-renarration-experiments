@@ -133,6 +133,7 @@
 
 function switch_style (css_title)
 {	
+	alert("hello");
   	var i;
   	var linktag = document.getElementsByTagName("link");
 
