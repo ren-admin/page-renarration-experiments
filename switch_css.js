@@ -19,8 +19,9 @@
 
 }());
 
+createButton()
 // Creates buttons to switch the css on click event. 
-(function createButton(){
+function createButton(){
 	var i= 0;
 	var buttons = 2;
 	var text_node = ['Invert_css', 'Change_font'];
@@ -30,12 +31,12 @@
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-		// button_tag.addEventListener("click", switch_style(link_title[i]), false);
+		button_tag.addEventListener("click", switch_style(link_title[i]), false);
 		//button_tag.addEventListener("click", hello, false);
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
 	}
-}());
+}
 
 // document.getElementById('invert_css').onclick = switch_style('switch1');
 // document.getElementById('change_font').onclick = switch_style('switch2');
