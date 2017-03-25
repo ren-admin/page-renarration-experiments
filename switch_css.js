@@ -48,7 +48,7 @@ function hello(){
 	alert('hello');
 }
 
-function switch_style ()
+function switch_style (css_title)
 {	
 	alert("hello world");
   	var i;
