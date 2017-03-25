@@ -58,7 +58,7 @@ function switch_style (css_title)
   	for (i = 0; i < linktag.length; i++ ) {
 		if ((linktag[i].rel.indexOf( "stylesheet" ) != -1) &&linktag[i].title) {
 		  	linktag[i].disabled = true ;
-		  	if (linktag[i].title == link_title[i]) {
+		  	if (linktag[i].title == css_title) {
 		    	linktag[i].disabled = false ;
 		  	}
 		}
