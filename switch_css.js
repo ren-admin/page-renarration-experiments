@@ -118,7 +118,7 @@
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-		//button_tag.addEventListener("click", switch_style(link_title[i]) );
+		button_tag.addEventListener("click", switch_style(link_title[i]) );
 		//button_tag.addEventListener("click", hello, false);
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
@@ -131,21 +131,21 @@
 // var style_domain = "www.vlabs.ac.in" ;
 
 
-// function switch_style (css_title)
-// {	
-//   	var i;
-//   	var linktag = document.getElementsByTagName("link");
+function switch_style (css_title)
+{	
+  	var i;
+  	var linktag = document.getElementsByTagName("link");
 
-//   	for (i = 0; i < linktag.length; i++ ) {
-// 		if ((linktag[i].rel.indexOf( "stylesheet" ) != -1) &&linktag[i].title) {
-// 		  	linktag[i].disabled = true ;
-// 		  	if (linktag[i].title == css_title) {
-// 		    	linktag[i].disabled = false ;
-// 		  	}
-// 		}
-// 	//set_cookie( style_cookie_name, css_title, style_cookie_duration, style_domain );
-//   	}
-// }
+  	for (i = 0; i < linktag.length; i++ ) {
+		if ((linktag[i].rel.indexOf( "stylesheet" ) != -1) &&linktag[i].title) {
+		  	linktag[i].disabled = true ;
+		  	if (linktag[i].title == css_title) {
+		    	linktag[i].disabled = false ;
+		  	}
+		}
+	//set_cookie( style_cookie_name, css_title, style_cookie_duration, style_domain );
+  	}
+}
 
 // function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain )
 // {
