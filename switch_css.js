@@ -6,7 +6,7 @@
 	var link_rel =['stylesheet', 'alternate stylesheet']
 	var css_themes =['//rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
 	'//rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
-	var link_title =['switch1', 'switch2'];
+	link_title =['switch1', 'switch2'];
 	for(i=0; i<css_links; i++){
 		
 		link = document.createElement('link');
@@ -22,7 +22,7 @@
 
 // Creates buttons to switch the css on click event. 
 (function createButton(){
-	var i= 0;
+	i= 0;
 	var buttons = 2;
 	var text_node = ['Invert_css', 'Change_font'];
 	var id = ['invert_css', 'change_font'];
@@ -32,9 +32,8 @@
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
 		button_tag.addEventListener("click", function(){
-			var linkk_title =['switch1', 'switch2'];
-			alert(linkk_title[1]);
-			switch_style(linkk_title[1]) 
+			alert(link_title[i]);
+			switch_style(link_title[i]) 
 		});
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
