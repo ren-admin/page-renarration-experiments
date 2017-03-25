@@ -31,6 +31,7 @@ var link_title=[];
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
+		link_title =['switch1', 'switch2'];
 		button_tag.addEventListener("click", function(){
 			switch_style(link_title[i]) 
 		});
