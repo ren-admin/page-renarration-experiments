@@ -1,4 +1,4 @@
-var link_title=[];
+var link_title =['switch1', 'switch2'];
 // This functions creates two links tags, used to switch the css.
 (function insertStylesheets(){
 	var i= 0;
@@ -31,26 +31,19 @@ var link_title=[];
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-
 		button_tag.addEventListener("click", function(){
 			alert(link_title[i]);
 			switch_style(link_title[i]) 
 		});
-		//button_tag.addEventListener("click", hello, false);
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
 	}
 }());
 
-// document.getElementById('invert_css').onclick = switch_style('switch1');
-// document.getElementById('change_font').onclick = switch_style('switch2');
+
 // var style_cookie_name = "style" ;
 // var style_cookie_duration = 30 ;
 // var style_domain = "www.vlabs.ac.in" ;
-
-function hello(){
-	alert('hello');
-}
 
 function switch_style (css_title)
 {	
