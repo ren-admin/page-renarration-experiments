@@ -34,7 +34,7 @@ var link_title=[];
 
 		button_tag.addEventListener("click", function(){
 			link_title =['switch1', 'switch2'];
-			switch_style(link_title[i]) 
+			switch_style('switch2')
 		});
 		//button_tag.addEventListener("click", hello, false);
 		body = document.getElementsByTagName('body')[0];
