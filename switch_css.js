@@ -1,3 +1,4 @@
+var link_title=[];
 // This functions creates two links tags, used to switch the css.
 (function insertStylesheets(){
 	var i= 0;
