@@ -44,9 +44,9 @@ function createButton(){
 // var style_cookie_duration = 30 ;
 // var style_domain = "www.vlabs.ac.in" ;
 
-function hello(){
-	alert('hello');
-}
+// function hello(){
+// 	alert('hello');
+// }
 
 function switch_style ()
 {	
