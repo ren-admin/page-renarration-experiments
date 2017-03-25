@@ -31,8 +31,8 @@ function createButton(){
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-		button_tag.addEventListener("click", switch_style(link_title[i]), false);
-		//button_tag.addEventListener("click", hello, false);
+		//button_tag.addEventListener("click", switch_style(link_title[i]), false);
+		button_tag.addEventListener("click", hello, false);
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
 	}
@@ -44,6 +44,9 @@ function createButton(){
 // var style_cookie_duration = 30 ;
 // var style_domain = "www.vlabs.ac.in" ;
 
+function hello(){
+	alert('hello');
+}
 
 function switch_style (css_title)
 {	
