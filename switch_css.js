@@ -43,9 +43,9 @@ document.getElementById('change_font').addEventListener('click', function() {
 }, false);
 
 
-// var style_cookie_name = "style" ;
-// var style_cookie_duration = 30 ;
-// var style_domain = "www.vlabs.ac.in" ;
+var style_cookie_name = "style";
+var style_cookie_duration = 30;
+var style_domain = "www.vlabs.ac.in";
 
 function switch_style (css_title)
 {	
@@ -60,20 +60,20 @@ function switch_style (css_title)
 		    	linktag[i].disabled = false ;
 		  	}
 		}
-	//set_cookie( style_cookie_name, css_title, style_cookie_duration, style_domain );
+	set_cookie( style_cookie_name, css_title, style_cookie_duration, style_domain );
   	}
 }
 
-// function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain )
-// {
-//     var domain_string = valid_domain ?
-//                        ("; domain=" + valid_domain) : '' ;
-//     document.cookie = cookie_name +
-//                        "=" + encodeURIComponent( cookie_value ) +
-//                        "; max-age=" + 60 * 60 *
-//                        24 * lifespan_in_days +
-//                        "; path=/" + domain_string ;
-// }
+function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain )
+{
+    var domain_string = valid_domain ?
+                       ("; domain=" + valid_domain) : '' ;
+    document.cookie = cookie_name +
+                       "=" + encodeURIComponent( cookie_value ) +
+                       "; max-age=" + 60 * 60 *
+                       24 * lifespan_in_days +
+                       "; path=/" + domain_string ;
+}
 
 // function get_cookie ( cookie_name )
 // {
