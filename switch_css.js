@@ -45,11 +45,11 @@ document.getElementById('invert_css').addEventListener('click', function() {
 
 (function changeFontsize(){
 	var fontSize = parseInt($('body').css('font-size'),10);
-    $('increase_font').on('click',function(){
+    $('#increase_font').on('click',function(){
         fontSize+=0.5;
         $('body').css('font-size',fontSize+'px');
     })
-    $('decrease_font').on('click',function(){
+    $('#decrease_font').on('click',function(){
         fontSize-=0.5;
         $('body').css('font-size',fontSize+'px');
     })
