@@ -22,9 +22,9 @@
 // Creates buttons to switch the css on click event. 
 (function createButton(){
 	var i= 0;
-	var buttons = 2;
-	var text_node = ['Invert_css', 'Change_font'];
-	var id = ['invert_css', 'change_font'];
+	var buttons = 3;
+	var text_node = ['Invert_css', 'Increase_font', 'Decrease_font'];
+	var id = ['invert_css', 'increase_font', 'decrease_font'];
 	for(i=0; i<buttons; i++){
 		button_tag = document.createElement("BUTTON");
 		text = document.createTextNode(text_node[i]);
@@ -38,9 +38,22 @@
 document.getElementById('invert_css').addEventListener('click', function() {
 	switch_style('switch1')
 }, false);
-document.getElementById('change_font').addEventListener('click', function() {
-	switch_style('switch2')
-}, false);
+// document.getElementById('change_font').addEventListener('click', function() {
+// 	switch_style('switch2')
+// }, false);
+
+
+(function changeFontsize(){
+	var fontSize = parseInt($('body').css('font-size'),10);
+    $('increase_font').on('click',function(){
+        fontSize+=0.5;
+        $('body').css('font-size',fontSize+'px');
+    })
+    $('decrease_font').on('click',function(){
+        fontSize-=0.5;
+        $('body').css('font-size',fontSize+'px');
+    })
+}());
 
 
 var style_cookie_name = "style";
