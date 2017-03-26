@@ -22,9 +22,9 @@
 // Creates buttons to switch the css on click event. 
 (function createButton(){
 	var i= 0;
-	var buttons = 3;
-	var text_node = ['Invert_css', 'Increase_font', 'Decrease_font'];
-	var id = ['invert_css', 'increase_font', 'decrease_font'];
+	var buttons = 4;
+	var text_node = ['Theme_1', 'Theme_2', 'Increase_font', 'Decrease_font'];
+	var id = ['theme_1', 'theme_2', 'increase_font', 'decrease_font'];
 	for(i=0; i<buttons; i++){
 		button_tag = document.createElement("BUTTON");
 		text = document.createTextNode(text_node[i]);
@@ -35,10 +35,10 @@
 	}
 }());
 
-document.getElementById('invert_css').addEventListener('click', function() {
+document.getElementById('theme_1').addEventListener('click', function() {
 	switch_style('switch1')
 }, false);
-document.getElementById('change_font').addEventListener('click', function() {
+document.getElementById('theme_2').addEventListener('click', function() {
 	switch_style('switch2')
 }, false);
 
