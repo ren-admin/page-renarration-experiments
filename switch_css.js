@@ -30,10 +30,9 @@
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-		button_tag.addEventListener("click", function(link_title, i){
+		button_tag.addEventListener("click", function(){
 			alert(i);
-			alert("helo");
-			switch_style(link_title[i]) 
+			//switch_style(link_title[i]) 
 		});
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
