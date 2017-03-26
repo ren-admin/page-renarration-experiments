@@ -73,6 +73,7 @@ function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain 
                        "; max-age=" + 60 * 60 *
                        24 * lifespan_in_days +
                        "; path=/" + domain_string ;
+    alert(document.cookie);
 }
 
 // function get_cookie ( cookie_name )
