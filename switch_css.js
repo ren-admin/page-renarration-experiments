@@ -76,27 +76,31 @@ function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain 
     alert(document.cookie);
 }
 
-// function get_cookie ( cookie_name )
-// {
-//     var name = cookie_name + "=";
-//     var decodedCookie = decodeURIComponent(document.cookie);
-//     var ca = decodedCookie.split(';');
-//     for(var i = 0; i <ca.length; i++) {
-//         var c = ca[i];
-//         while (c.charAt(0) == ' ') {
-//             c = c.substring(1);
-//         }
-//         if (c.indexOf(name) == 0) {
-//             return c.substring(name.length, c.length);
-//         }
-//     }
-//     return "";
-// }
+function get_cookie ( cookie_name )
+{
+    var name = cookie_name + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
-// function set_style_from_cookie()
-// {
-//   var css_title = get_cookie( style_cookie_name );
-//   if (css_title.length) {
-//     switch_style( css_title );
-//   }
-// }
+function set_style_from_cookie()
+{
+  var css_title = get_cookie( style_cookie_name );
+  if (css_title.length) {
+    switch_style( css_title );
+  }
+}
+
+window.onload=function () {
+	set_style_from_cookie()
+}
