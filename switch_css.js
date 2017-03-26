@@ -38,9 +38,9 @@
 document.getElementById('invert_css').addEventListener('click', function() {
 	switch_style('switch1')
 }, false);
-// document.getElementById('change_font').addEventListener('click', function() {
-// 	switch_style('switch2')
-// }, false);
+document.getElementById('change_font').addEventListener('click', function() {
+	switch_style('switch2')
+}, false);
 
 
 (function changeFontsize(){
