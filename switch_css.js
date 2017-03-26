@@ -5,7 +5,7 @@
 	var link_rel =['stylesheet', 'alternate stylesheet']
 	var css_themes =['//rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
 	'//rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
-	link_title =['switch1', 'switch2'];
+	var link_title =['switch1', 'switch2'];
 	for(i=0; i<css_links; i++){
 		
 		link = document.createElement('link');
@@ -30,14 +30,17 @@
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-		button_tag.addEventListener("click", function(){
-			alert(i);
-			//switch_style(link_title[i]) 
-		});
 		body = document.getElementsByTagName('body')[0];
 		body.appendChild(button_tag);
 	}
 }());
+
+document.getElementById('invert_css').addEventListener('click', function() {
+	switch_style('switch1')
+}, false);
+document.getElementById('change_font').addEventListener('click', function() {
+	switch_style('switch2')
+}, false);
 
 
 // var style_cookie_name = "style" ;
