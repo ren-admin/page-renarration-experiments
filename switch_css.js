@@ -111,8 +111,8 @@ function set_style_from_cookie()
 }
 
 window.onload=function () {
-	insertStylesheets()
-	createButton()
+	// insertStylesheets()
+	// createButton()
 	set_style_from_cookie()
 }
 
