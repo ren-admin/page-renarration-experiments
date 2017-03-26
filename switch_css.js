@@ -78,19 +78,15 @@ function set_cookie ( cookie_name, cookie_value, lifespan_in_days, valid_domain 
 
 function get_cookie ( cookie_name )
 {
-    var name = cookie_name + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
+    var cookie_string = document.cookie ;
+    if (cookie_string.length != 0) {
+        var cookie_value = cookie_string.match (
+                        '(^|;)[\s]*' +
+                        cookie_name +
+                        '=([^;]*)' );
+        return decodeURIComponent ( cookie_value[2] ) ;
     }
-    return "";
+    return '' ;
 }
 
 function set_style_from_cookie()
@@ -102,5 +98,9 @@ function set_style_from_cookie()
 }
 
 window.onload=function () {
+	insertStylesheets()
+	createButton()
 	set_style_from_cookie()
 }
+
+
