@@ -1,4 +1,5 @@
-html{
-    background-color: maroon;
-    color: white;
+body{
+    background-color: maroon !important;
+    color: white !important;
+    mix-blend-mode: screen;
 }
