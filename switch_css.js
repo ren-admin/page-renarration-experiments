@@ -25,14 +25,18 @@
 	var buttons = 4;
 	var text_node = ['Theme_1', 'Theme_2', 'Increase_font', 'Decrease_font'];
 	var id = ['theme_1', 'theme_2', 'increase_font', 'decrease_font'];
+	div = document.createElement("div");
+	div.id= 'annolet';
+	document.getElementsByTagName('body')[0].appendChild(div);
+
 	for(i=0; i<buttons; i++){
 		button_tag = document.createElement("BUTTON");
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = id[i];
 		button_tag.appendChild(text);
-		body = document.getElementsByTagName('body')[0];
-		body.appendChild(button_tag);
+		document.getElementById('annolet').appendChild(button_tag);
 	}
+	
 }());
 
 document.getElementById('theme_1').addEventListener('click', function() {
