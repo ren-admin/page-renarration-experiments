@@ -36,7 +36,7 @@
 		button_tag.appendChild(text);
 		document.getElementById('annolet').appendChild(button_tag);
 	}
-	
+
 }());
 
 document.getElementById('theme_1').addEventListener('click', function() {
@@ -58,6 +58,18 @@ document.getElementById('theme_2').addEventListener('click', function() {
         $('body').css('font-size',fontSize+'px');
     })
 }());
+
+
+
+var elementPosition = $('#annolet').offset();
+
+$(window).scroll(function(){
+        if($(window).scrollTop() > elementPosition.top){
+              $('#annolet').css('position','fixed').css('top','0');
+        } else {
+            $('#annolet').css('position','static');
+        }    
+});
 
 
 var style_cookie_name = "style";
