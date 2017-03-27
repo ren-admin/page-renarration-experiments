@@ -30,11 +30,11 @@
 	document.getElementsByTagName('body')[0].appendChild(div);
 
 	for(i=0; i<buttons; i++){
-		button_tag = document.createElement("BUTTON");
+		li = document.createElement("li");
 		text = document.createTextNode(text_node[i]);
-		button_tag.id = id[i];
-		button_tag.appendChild(text);
-		document.getElementById('annolet').appendChild(button_tag);
+		li.id = id[i];
+		li_tag.appendChild(text);
+		document.getElementById('annolet').appendChild(li);
 	}
 
 }());
