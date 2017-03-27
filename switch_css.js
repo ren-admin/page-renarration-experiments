@@ -61,15 +61,15 @@ document.getElementById('theme_2').addEventListener('click', function() {
 
 
 
-var elementPosition = $('#annolet').offset();
+// var elementPosition = $('#annolet').offset();
 
-$(window).scroll(function(){
-        if($(window).scrollTop() > elementPosition.top){
-              $('#annolet').css('position','fixed').css('top','0');
-        } else {
-            $('#annolet').css('position','static');
-        }    
-});
+// $(window).scroll(function(){
+//         if($(window).scrollTop() > elementPosition.top){
+//               $('#annolet').css('position','fixed').css('top','0');
+//         } else {
+//             $('#annolet').css('position','static');
+//         }    
+// });
 
 
 var style_cookie_name = "style";
