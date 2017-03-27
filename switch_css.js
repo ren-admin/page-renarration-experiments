@@ -4,8 +4,9 @@
 	var css_links = 2;
 	var link_rel =['stylesheet', 'alternate stylesheet']
 	var css_themes =['//rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
-	'//rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
-	var link_title =['switch1', 'switch2'];
+	'//rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'
+	'//rawgit.com/sadhanareddy/css-changer-tool/master/annolet.css'];
+	var link_title =['switch1', 'switch2', ''];
 	for(i=0; i<css_links; i++){
 		
 		link = document.createElement('link');
