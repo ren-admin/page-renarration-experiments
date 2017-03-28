@@ -23,8 +23,8 @@
 (function createButton(){
 	var i= 0;
 	var buttons = 4;
-	var text_node = ['Theme_1', 'Theme_2', 'Increase_font', 'Decrease_font'];
-	var id = ['theme_1', 'theme_2', 'increase_font', 'decrease_font'];
+	var text_node = ['Theme_1', 'Theme_2', 'Theme_3', 'Increase_font', 'Decrease_font'];
+	var id = ['theme_1', 'theme_2','theme_3', 'increase_font', 'decrease_font'];
 	div = document.createElement("div");
 	div.id= 'annolet';
 	document.getElementsByTagName('body')[0].appendChild(div);
@@ -46,6 +46,10 @@ document.getElementById('theme_2').addEventListener('click', function() {
 	switch_style('switch2')
 }, false);
 
+document.getElementById('theme_3').addEventListener('click', function() {
+	setbackground()
+}, false);
+
 
 (function changeFontsize(){
 	var fontSize = parseInt($('body').css('font-size'),10);
@@ -61,15 +65,35 @@ document.getElementById('theme_2').addEventListener('click', function() {
 
 
 
-// var elementPosition = $('#annolet').offset();
+function setbackground()
+{
+		window.setTimeout( "setbackground()", 3000); // 5000 milliseconds delay
 
-// $(window).scroll(function(){
-//         if($(window).scrollTop() > elementPosition.top){
-//               $('#annolet').css('position','fixed').css('top','0');
-//         } else {
-//             $('#annolet').css('position','static');
-//         }    
-// });
+		var index = Math.round(Math.random() * 9);
+
+		var ColorValue = "FFFFFF"; // default color - white (index = 0)
+
+		if(index == 1)
+		ColorValue = "FFCCCC"; //peach
+		if(index == 2)
+		ColorValue = "CCAFFF"; //violet
+		if(index == 3)
+		ColorValue = "A6BEFF"; //lt blue
+		if(index == 4)
+		ColorValue = "99FFFF"; //cyan
+		if(index == 5)
+		ColorValue = "D5CCBB"; //tan
+		if(index == 6)
+		ColorValue = "99FF99"; //lt green
+		if(index == 7)
+		ColorValue = "FFFF99"; //lt yellow
+		if(index == 8)
+		ColorValue = "FFCC99"; //lt orange
+		if(index == 9)
+		ColorValue = "CCCCCC"; //lt grey
+
+		document.getElementsByTagName("body")[0].style.backgroundColor = "#" + ColorValue;
+}
 
 
 var style_cookie_name = "style";
