@@ -7,12 +7,13 @@
 }());
 
 (function setAttr() {
-	var all = document.getElementsByTagName("*");
-	for (var i=0, max=all.length; i < max; i++) {
-        all[i].setAttribute("contenteditable", true);
-        all[i].setAttribute("class", "edit");
-		all[i].setAttribute("title", "editext");
-	}
+	// var all = document.getElementsByTagName("*");
+	// for (var i=0, max=all.length; i < max; i++) {
+ //        all[i].setAttribute("contenteditable", true);
+ //        all[i].setAttribute("class", "edit");
+	// 	all[i].setAttribute("title", "editext");
+	// }
+	document.getElementsByTagName('body').contentEditable=true;
 }());
 
 function saveEdits() {
