@@ -116,6 +116,6 @@ function selectHTML() {
 $(function() {
     $('#highlight').click( function() {
         var mytext = selectHTML();
-        $('span').css({"background-color":"red"});
+        $('span').css({"background-color":"yellow"});
     });
 });
