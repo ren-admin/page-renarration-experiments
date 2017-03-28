@@ -58,5 +58,5 @@ function checkEdits() {
 }());
 
 window.onload ={
-	checkEdits();
+	checkEdits()
 }
