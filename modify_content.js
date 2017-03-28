@@ -1,11 +1,11 @@
-function setAttr() {
+(function setAttr() {
 	var all = document.getElementsByTagName("*");
 	for (var i=0, max=all.length; i < max; i++) {
         all[i].setAttribute("contenteditable", true);
         all[i].setAttribute("class", "edit");
 		all[i].setAttribute("title", "editext");
 	}
-}
+}());
 
 function saveEdits() {
 
@@ -29,10 +29,10 @@ function checkEdits() {
 	document.getElementById("edit").innerHTML = localStorage.userEdits;
 }
 
-window.onload={
-	setAttr()
-	checkEdits()
-}
+// window.onload={
+// 	setAttr()
+// 	checkEdits()
+// }
 
 (function createDiv(){
      div = document.createElement('div');
