@@ -43,7 +43,7 @@ document.getElementById('theme_1').addEventListener('click', function() {
 	switch_style('switch1')
 }, false);
 document.getElementById('theme_2').addEventListener('click', function() {
-	switch_style('switch2')
+	document.getElementsByTagName(body)[0].style.color="darkpink";
 }, false);
 
 
