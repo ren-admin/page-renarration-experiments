@@ -53,10 +53,28 @@ function checkEdits() {
      body = document.getElementsByTagName('body')[0];
      body.appendChild(button);
      button.onclick=function(){
-     	saveEdits();
+     	saveEdits()
      };
 }());
 
 // window.onload = function() {
 //   checkEdits()
 // };
+
+
+function replaceImg(){
+	var image = document.getElementsByTagName("img");
+	image.onclick = function(e) {
+		this.src=output.innerHTML
+	}
+}
+
+
+(function createTextArea() {
+    output = document.createElement("TEXTAREA");
+    output.id="textarea";
+    t = document.createTextNode("");
+    output.appendChild(t);
+    body = document.getElementsByTagName('body')[0];
+    body.appendChild(output);
+}());
