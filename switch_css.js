@@ -22,7 +22,7 @@
 // Creates buttons to switch the css on click event. 
 (function createButton(){
 	var i= 0;
-	var buttons = 4;
+	var buttons = 5;
 	var text_node = ['Theme_1', 'Theme_2', 'Theme_3', 'Increase_font', 'Decrease_font'];
 	var id = ['theme_1', 'theme_2','theme_3', 'increase_font', 'decrease_font'];
 	div = document.createElement("div");
