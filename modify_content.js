@@ -82,6 +82,7 @@ function replaceImg(){
 
 (function highlightButton(){
      high_button = document.createElement("BUTTON");
+     high_button.id = "highlight";
      var text = document.createTextNode("Highlight Button");
      high_button.appendChild(text);
      body = document.getElementsByTagName('body')[0];
@@ -90,3 +91,31 @@ function replaceImg(){
      // 	saveEdits()
      // };
 }());
+
+
+function selectHTML() {
+    try {
+        if (window.ActiveXObject) {
+            var c = document.selection.createRange();
+            return c.htmlText;
+        }
+    
+        var nNd = document.createElement("span");
+        var w = getSelection().getRangeAt(0);
+        w.surroundContents(nNd);
+        return nNd.innerHTML;
+    } catch (e) {
+        if (window.ActiveXObject) {
+            return document.selection.createRange();
+        } else {
+            return getSelection();
+        }
+    }
+}
+
+$(function() {
+    $('#highlight').click( function() {
+        var mytext = selectHTML();
+        $('span').css({"background-color":"red"});
+    });
+});
