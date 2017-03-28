@@ -1,3 +1,11 @@
+// funtion to disable all links
+(function disableAllLinks(){
+    var anchors = document.getElementsByTagName("a");
+    for (var i = 0; i < anchors.length; i++) {
+        anchors[i].onclick = function() {return(false);};
+    }
+}());
+
 (function setAttr() {
 	var all = document.getElementsByTagName("*");
 	for (var i=0, max=all.length; i < max; i++) {
@@ -29,10 +37,6 @@ function checkEdits() {
 	document.getElementById("edit").innerHTML = localStorage.userEdits;
 }
 
-// window.onload={
-// 	setAttr()
-// 	checkEdits()
-// }
 
 (function createDiv(){
      div = document.createElement('div');
