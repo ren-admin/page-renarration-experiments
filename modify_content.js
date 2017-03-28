@@ -57,6 +57,6 @@ function checkEdits() {
      };
 }());
 
-window.onload = function() {
-  checkEdits()
-};
+// window.onload = function() {
+//   checkEdits()
+// };
