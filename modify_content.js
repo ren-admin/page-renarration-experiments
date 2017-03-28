@@ -87,14 +87,12 @@ function replaceImg(){
      high_button.appendChild(text);
      body = document.getElementsByTagName('body')[0];
      body.appendChild(high_button);
-     // button.onclick=function(){
-     // 	saveEdits()
-     // };
 }());
 
 
 function selectHTML() {
-    try {
+    try 
+    {
         if (window.ActiveXObject) {
             var c = document.selection.createRange();
             return c.htmlText;
@@ -104,7 +102,9 @@ function selectHTML() {
         var w = getSelection().getRangeAt(0);
         w.surroundContents(nNd);
         return nNd.innerHTML;
-    } catch (e) {
+    } 
+    catch (e) 
+    {
         if (window.ActiveXObject) {
             return document.selection.createRange();
         } else {
