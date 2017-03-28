@@ -33,7 +33,7 @@ function saveEdits() {
 function checkEdits() {
 	//find out if the user has previously saved edits
 	if(localStorage.userEdits!=null)
-	document.getElementById("edit").innerHTML = localStorage.userEdits;
+	document.getElementsByClassName("edit").innerHTML = localStorage.userEdits;
 }
 
 
@@ -52,4 +52,11 @@ function checkEdits() {
      button.appendChild(text);
      body = document.getElementsByTagName('body')[0];
      body.appendChild(button);
+     button.onclick=function(){
+     	saveEdits();
+     };
 }());
+
+window.onload ={
+	checkEdits();
+}
