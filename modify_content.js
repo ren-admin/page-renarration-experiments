@@ -14,9 +14,9 @@
 	// 	all[i].setAttribute("title", "editext");
 	// }
 	
-	document.getElementsByTagName('body').setAttribute('contenteditable', true);
-	document.getElementsByTagName('body').setAttribute('class', 'edit');
-	document.getElementsByTagName('body').setAttribute('title', 'Edit Content');
+	document.getElementsByTagName('body')[0].setAttribute('contenteditable', true);
+	document.getElementsByTagName('body')[0].setAttribute('class', 'edit');
+	document.getElementsByTagName('body')[0].setAttribute('title', 'Edit Content');
 }());
 
 function saveEdits() {
