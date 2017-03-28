@@ -78,3 +78,15 @@ function replaceImg(){
     body = document.getElementsByTagName('body')[0];
     body.appendChild(output);
 }());
+
+
+(function highlightButton(){
+     high_button = document.createElement("BUTTON");
+     var text = document.createTextNode("Highlight Button");
+     high_button.appendChild(text);
+     body = document.getElementsByTagName('body')[0];
+     body.appendChild(high_button);
+     // button.onclick=function(){
+     // 	saveEdits()
+     // };
+}());
