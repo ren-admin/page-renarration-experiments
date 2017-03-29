@@ -4,7 +4,8 @@
 	var css_links = 2;
 	var link_rel =['stylesheet', 'alternate stylesheet'] 
 	var css_themes =['https://rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
-	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
+	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css',
+	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch3.css'];
 	var link_title =['switch1', 'switch2', 'switch3'];
 
 	for(i=0; i<css_links; i++){
@@ -52,7 +53,8 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
 }());
 
 
-function add_clickevents(){
+// This function adds click events to the elements.
+(function add_clickevents(){
 	document.getElementById('theme_1').addEventListener('click', function() {
 		switch_style('switch1')
 	}, false);
@@ -62,7 +64,7 @@ function add_clickevents(){
 	document.getElementById('theme_3').addEventListener('click', function() {
 		switch_style('switch3')
 	}, false);
-}
+}());
 
 
 function switch_style (css_title)
