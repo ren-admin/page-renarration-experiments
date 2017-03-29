@@ -1,0 +1,7 @@
+html
+{
+	-webkit-filter: invert(50%);
+	-moz-filter: invert(50%);
+	-o-filter: invert(50%);
+	-ms-filter: invert(50%);
+}

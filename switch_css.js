@@ -5,7 +5,7 @@
 	var link_rel =['stylesheet', 'alternate stylesheet'] 
 	var css_themes =['https://rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
 	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
-	var link_title =['switch1', 'switch2'];
+	var link_title =['switch1', 'switch2', 'switch3'];
 
 	for(i=0; i<css_links; i++){
 		link = document.createElement('link');
@@ -51,16 +51,18 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
 	}
 }());
 
-document.getElementById('theme_1').addEventListener('click', function() {
-	switch_style('switch1')
-}, false);
-document.getElementById('theme_2').addEventListener('click', function() {
-	switch_style('switch2')
-}, false);
 
-// document.getElementById('theme_3').addEventListener('click', function() {
-// 	setbackground()
-// }, false);
+function add_clickevents(){
+	document.getElementById('theme_1').addEventListener('click', function() {
+		switch_style('switch1')
+	}, false);
+	document.getElementById('theme_2').addEventListener('click', function() {
+		switch_style('switch2')
+	}, false);
+	document.getElementById('theme_3').addEventListener('click', function() {
+		switch_style('switch3')
+	}, false);
+}
 
 
 function switch_style (css_title)
