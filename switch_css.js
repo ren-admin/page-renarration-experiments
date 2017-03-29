@@ -1,7 +1,7 @@
 // This functions creates two link tags, for switching the style sheets.
 (function alternate_stylesheets(){
 	var i= 0;
-	var css_links = 2;
+	var css_links = 3;
 	var link_rel =['stylesheet', 'alternate stylesheet'] 
 	var css_themes =['https://rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
 	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css',
