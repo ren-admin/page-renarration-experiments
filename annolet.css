@@ -4,7 +4,7 @@ body{
 
 #switchcss-container {
   overflow: hidden;
-  background-color: orange;
+  background-color: #F47118;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -19,5 +19,5 @@ body{
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  background: black;
+  background: #000000;
 }

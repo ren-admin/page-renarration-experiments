@@ -3,7 +3,9 @@
 	background: #C98F8F !important;
 }
 
-*#theme_1 {
+/**#theme_1 {
     color: inherit;
 	background: inherit;
-}
+}*/
+
+div:not(#switch-container)
