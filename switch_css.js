@@ -2,7 +2,7 @@
 (function alternate_stylesheets(){
 	var i= 0;
 	var css_links = 3;
-	var link_rel =['stylesheet', 'alternate stylesheet'] 
+	var link_rel =['stylesheet', 'alternate stylesheet', 'alternate stylesheet'] 
 	var css_themes =['https://rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
 	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css',
 	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch3.css'];
