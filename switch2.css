@@ -2,3 +2,8 @@
 	color: black !important;
 	background: maroon !important;
 }
+
+*#switchcss-container {
+    color: inherit;
+	background: inherit;
+}
