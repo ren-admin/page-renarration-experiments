@@ -4,18 +4,20 @@ body{
 
 #switchcss-container {
   overflow: hidden;
-  background-color: #333;
+  background-color: orange;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
 
-#switchcss-container button {
+#theme_1, #theme_2, #theme_3{
   float: left;
   display: block;
+  margin: 0 auto;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  background: black;
 }
