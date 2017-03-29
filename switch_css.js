@@ -47,7 +47,7 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
 		text = document.createTextNode(text_node[i]);
 		button_tag.id = button_id[i];
 		button_tag.appendChild(text);
-		document.getElementById('switchcss_container').appendChild(button_tag);
+		document.getElementById('switchcss-container').appendChild(button_tag);
 	}
 }());
 
