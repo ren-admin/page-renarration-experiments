@@ -4,7 +4,7 @@
 	var css_links = 2;
 	var link_rel =['stylesheet', 'alternate stylesheet'] 
 	var css_themes =['https://rawgit.com/sadhanareddy/css-changer-tool/master/switch1.css',
-	'https://github.com/sadhanareddy/css-changer-tool/blob/master/switch2.css'];
+	'https://rawgit.com/sadhanareddy/css-changer-tool/master/switch2.css'];
 	var link_title =['switch1', 'switch2'];
 
 	for(i=0; i<css_links; i++){
