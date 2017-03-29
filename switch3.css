@@ -1,7 +1,5 @@
-html
-{
-	-webkit-filter: invert(50%);
-	-moz-filter: invert(50%);
-	-o-filter: invert(50%);
-	-ms-filter: invert(50%);
+*{
+	color: black !important;
+	background:  #a0db8e !important;
+	font-size:x-large;
 }
