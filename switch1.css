@@ -6,7 +6,7 @@ html
 	-ms-filter: invert(100%); 
 }
 
-html#switchcss-container {
+html#theme_1{
     -webkit-filter: inherit;
 	-moz-filter: inherit;
 	-o-filter: inherit;
