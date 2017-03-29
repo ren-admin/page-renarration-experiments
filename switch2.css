@@ -1,9 +1,9 @@
 *{
 	color: black !important;
-	background: maroon !important;
+	background: blue !important;
 }
 
-*#theme_1 {
+*#switchcss-container {
     color: inherit;
 	background: inherit;
 }
