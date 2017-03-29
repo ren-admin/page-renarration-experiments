@@ -23,13 +23,13 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
 <div id=css-container>...</div> whose inner HTML is a list of buttons inside body. */
 
 (function switchcss_container(){
-	// appending a CSS stylesheet to head of webpage
-    // var link = document.createElement('link');
-    // // using rawgit.com MaxCDN.. files directly linked to git repo 'annoletjs/master'
-    // link.rel = "stylesheet";
-    // link.type = "text/css";
-    // link.href = "https://rawgit.com/sadhanareddy/css-changer-tool/master/annolet.css"; //random version number removed bcoz some browser take it as text file and not as CSS.
-   	// document.getElementsByTagName('head')[0].appendChild(link);
+	appending a CSS stylesheet to head of webpage
+    var link = document.createElement('link');
+    // using rawgit.com MaxCDN.. files directly linked to git repo 'annoletjs/master'
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = "https://rawgit.com/sadhanareddy/css-changer-tool/master/annolet.css"; //random version number removed bcoz some browser take it as text file and not as CSS.
+   	document.getElementsByTagName('head')[0].appendChild(link);
 
 	// appending a div to body of webpage
     var body = document.getElementsByTagName('body')[0];
