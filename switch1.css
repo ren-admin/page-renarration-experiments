@@ -1,4 +1,4 @@
-/*html
+html
 {
 	-webkit-filter: invert(100%);
 	-moz-filter: invert(100%);
@@ -6,7 +6,7 @@
 	-ms-filter: invert(100%); 
 }
 
-html#switchcss-container {
+#switchcss-container {
     -webkit-filter: inherit;
 	-moz-filter: inherit;
 	-o-filter: inherit;
@@ -15,4 +15,3 @@ html#switchcss-container {
 
 
 
-*/
