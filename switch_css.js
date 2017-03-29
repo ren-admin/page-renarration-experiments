@@ -23,7 +23,7 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
 <div id=css-container>...</div> whose inner HTML is a list of buttons inside body. */
 
 (function switchcss_container(){
-	appending a CSS stylesheet to head of webpage
+	//appending a CSS stylesheet to head of webpage
     var link = document.createElement('link');
     // using rawgit.com MaxCDN.. files directly linked to git repo 'annoletjs/master'
     link.rel = "stylesheet";
