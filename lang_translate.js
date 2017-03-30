@@ -1,32 +1,50 @@
-// funtion to disable all links
-(function disableAllLinks(){
-    var anchors = document.getElementsByTagName("a");
-    for (var i = 0; i < anchors.length; i++) {
-        anchors[i].onclick = function() {return(false);};
-    }
+/* This function creates a continer div which lets the users interact with app. When switchcssContainer
+is called, it injects CSS stylesheet into <head> element of website to stylize the container and
+<div id=css-container>...</div> whose inner HTML is a list of options inside body. */
+
+(function switchcss_container(){
+  //appending a CSS stylesheet to head of webpage
+    var link = document.createElement('link');
+    // using rawgit.com MaxCDN.. files directly linked to git repo 'annoletjs/master'
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = "https://rawgit.com/sadhanareddy/css-changer-tool/master/annolet.css"; //random version number removed bcoz some browser take it as text file and not as CSS.
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+  // appending a div to body of webpage
+    var body = document.getElementsByTagName('body')[0];
+    var switchcss_container = document.createElement('div');
+    switchcss_container.id = 'switchcss-container';
+    body.appendChild(switchcss_container);
+
+  //appending content into the div inner HTML
+  create_div()
+  Translate_button()
+  select_list()
+  create_textArea()
 }());
 
 function googleTranslateElementInit() {
 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
-(function swich_button(){
+function create_div(){
      div = document.createElement('div');
      div.id = 'google_translate_element';
      body = document.getElementsByTagName('body')[0];
      body.appendChild(div);
-}());
+}
 
-(function Translatebutton(){
+function Translate_button(){
      button = document.createElement("BUTTON");
      var text = document.createTextNode("Translate");
-     button.id = 'translate';
+     button.id = 'lang_translate';
      button.appendChild(text);
      body = document.getElementsByTagName('body')[0];
      body.appendChild(button);
-}());
+}
 
-(function selectList(){
+function select_list(){
       //Create array of options to be added
       var array = ["telugu","hindi", "malayalam"];
       var options = ["te", "hi", "ml"];
@@ -43,34 +61,34 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
           option.text = array[i];
           selectList.appendChild(option);
       }
-}());
+}
 
-(function createTextArea() {
+function create_textArea() {
     var output = document.createElement("TEXTAREA");
     output.id="textarea";
     var t = document.createTextNode("");
     output.appendChild(t);
     body = document.getElementsByTagName('body')[0];
     body.appendChild(output);
-}());
+}
 
 var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
 keyAPI = "trnsl.1.1.20170315T015859Z.3e04bd9bd31f6f00.99aa35ddf89167a86f5a892014edf632e9cef14f";
 
-document.querySelector('#translate').addEventListener('click', function() {
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
-    alert(text);       
 
+document.querySelector('#lang_translate').addEventListener('click', function() {
     var xhr = new XMLHttpRequest(),
         // textAPI = document.querySelector('#source').value,
+        var textAPI = "";
+        if (window.getSelection) {
+          textAPI = window.getSelection().toString();
+          } else if (document.selection && document.selection.type != "Control") {
+              textAPI = document.selection.createRange().text;
+          }
+        alert(textAPI);
         langAPI = document.querySelector('#lang').value
         alert(langAPI)
-        data = "key="+keyAPI+"&text="+text+"&lang="+langAPI;
+        data = "key="+keyAPI+"&text="+textAPI+"&lang="+langAPI;
         alert(data)
 
     xhr.open("POST",url,true);
@@ -80,25 +98,12 @@ document.querySelector('#translate').addEventListener('click', function() {
         if (this.readyState==4 && this.status==200) {
             var res = this.responseText;
             alert(res);
-            //document.querySelector('#json').innerHTML = res;
             var json = JSON.parse(res);
             if(json.code == 200) {
-                //document.querySelector('#output').innerHTML = json.text[0];
-                //text= json.text[0];
-                 // if (document.selection && document.selection.createRange) {
-                 //      // range = document.selection.createRange();
-                 //      // //range.text = json.text[0];
-                 //      // range.pasteHTML(json.text[0]);
-                 //      alert(document.selection.createRange);
-                 //      alert(selected);
-                 //  }
-                 //document.selection.createRange().text = json.text[0];
                  document.querySelector('#textarea').innerHTML = json.text[0];
                  alert("selected");
             }
             else {
-                //document.querySelector('#output').innerHTML = "Error Code: " + json.code;
-                // text= "Error Code: " + json.code;
                 alert("select text");
             }
         }

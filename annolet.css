@@ -10,7 +10,9 @@ body{
   width: 100%;
 }
 
-#theme_1, #theme_2, #theme_3{
+#theme_1, #theme_2, #theme_3,
+#google_translate_element, #lang_translate,
+#lang, #textarea{
   float: left;
   display: block;
   margin: 0 auto;
@@ -21,3 +23,4 @@ body{
   font-size: 17px;
   background: #000000;
 }
+
