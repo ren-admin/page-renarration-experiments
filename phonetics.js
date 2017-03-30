@@ -22,12 +22,11 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
 }());
 
 function Translate_button(){
-     button = document.createElement("BUTTON");
-     var text = document.createTextNode("Get Phonetic");
-     button.id = 'phonetic';
-     button.appendChild(text);
-     body = document.getElementsByTagName('body')[0];
-     body.appendChild(button);
+    button = document.createElement("BUTTON");
+    var text = document.createTextNode("Get Phonetic");
+    button.id = 'phonetic';
+    button.appendChild(text);
+    document.getElementById('switchcss-container').appendChild(button);
 }
 
 function create_textArea() {
@@ -35,8 +34,7 @@ function create_textArea() {
     output.id="textarea";
     var t = document.createTextNode("");
     output.appendChild(t);
-    body = document.getElementsByTagName('body')[0];
-    body.appendChild(output);
+    document.getElementById('switchcss-container').appendChild(output);
 }
 
 // var url = "http://www.phonemicchart.com/transcribe/";
