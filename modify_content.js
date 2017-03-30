@@ -85,7 +85,7 @@ function highlight_button(){
     var text = document.createTextNode("Highlight Button");
     highlight_button.appendChild(text);
     document.getElementById('switchcss-container').appendChild(highlight_button);
-    button.onclick=function(){
+    highlight_button.onclick=function(){
         highlight_content()
     };
 }
