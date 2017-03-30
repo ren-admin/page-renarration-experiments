@@ -78,28 +78,12 @@ function save_button(){
     document.getElementById('switchcss-container').appendChild(button);
 }
 
-function replaceImg(){
-	var image = document.getElementsByTagName("img");
-	image.onclick = function(e) {
-		this.src=output.innerHTML
-	}
-}
-
-
-// (function createTextArea() {
-//     output = document.createElement("TEXTAREA");
-//     output.id="textarea";
-//     t = document.createTextNode("");
-//     output.appendChild(t);
-//     body = document.getElementsByTagName('body')[0];
-//     body.appendChild(output);
-// }());
 
 function highlight_button(){
-    high_button = document.createElement("BUTTON");
-    high_button.id = "highlight";
+    highlight_button = document.createElement("BUTTON");
+    highlight_button.id = "highlight";
     var text = document.createTextNode("Highlight Button");
-    high_button.appendChild(text);
+    highlight_button.appendChild(text);
     document.getElementById('switchcss-container').appendChild(highlight_button);
     button.onclick=function(){
         highlight_content()
@@ -133,6 +117,25 @@ function selectHTML() {
         }
     }
 }
+
+
+
+// function replaceImg(){
+//     var image = document.getElementsByTagName("img");
+//     image.onclick = function(e) {
+//         this.src=output.innerHTML
+//     }
+// }
+
+
+// (function createTextArea() {
+//     output = document.createElement("TEXTAREA");
+//     output.id="textarea";
+//     t = document.createTextNode("");
+//     output.appendChild(t);
+//     body = document.getElementsByTagName('body')[0];
+//     body.appendChild(output);
+// }());
 
 
 
