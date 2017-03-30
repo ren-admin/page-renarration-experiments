@@ -48,11 +48,11 @@ document.querySelector('#phonetic').addEventListener('click', function() {
     else if (document.selection && document.selection.type != "Control") {
         textAPI = document.selection.createRange().text;
     }
-    alert(text);
+    alert(textAPI);
     xhr.open("POST",url,true);
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-    xhr.send(JSON.stringify({"sentence":text}));
+    xhr.send(JSON.stringify({"sentence":textAPI}));
     xhr.onreadystatechange = function() {
         if (this.readyState==4 && this.status==200) {
             var res = this.responseText;
