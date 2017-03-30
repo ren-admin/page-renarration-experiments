@@ -100,7 +100,7 @@ function highlight_button(){
     high_button.id = "highlight";
     var text = document.createTextNode("Highlight Button");
     high_button.appendChild(text);
-    document.getElementById('switchcss-container').appendChild(button);
+    document.getElementById('switchcss-container').appendChild(highlight_button);
     button.onclick=function(){
         highlight_content()
     };
