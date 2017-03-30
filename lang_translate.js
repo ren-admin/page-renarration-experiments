@@ -20,6 +20,7 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
     Translate_button()
     select_list()
     create_textArea()
+  
 }());
 
 function googleTranslateElementInit() {
@@ -29,8 +30,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 function create_div(){
      div = document.createElement('div');
      div.id = 'google_translate_element';
-     body = document.getElementsByTagName('body')[0];
-     body.appendChild(div);
+     document.getElementById('switchcss-container').appendChild(div);
 }
 
 function Translate_button(){
