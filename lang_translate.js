@@ -18,10 +18,14 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
     body.appendChild(switchcss_container);
 
   //appending content into the div inner HTML
-  create_div()
-  Translate_button()
-  select_list()
-  create_textArea()
+  document.getElementById('switchcss-container').
+  appendChild(
+    create_div()
+    Translate_button()
+    select_list()
+    create_textArea()
+  );
+  
 }());
 
 function googleTranslateElementInit() {
