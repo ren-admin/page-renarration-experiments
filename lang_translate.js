@@ -77,19 +77,20 @@ keyAPI = "trnsl.1.1.20170315T015859Z.3e04bd9bd31f6f00.99aa35ddf89167a86f5a892014
 
 
 document.querySelector('#lang_translate').addEventListener('click', function() {
-    var xhr = new XMLHttpRequest(),
-        // textAPI = document.querySelector('#source').value,
-        var textAPI = "";
-        if (window.getSelection) {
-          textAPI = window.getSelection().toString();
-          } else if (document.selection && document.selection.type != "Control") {
-              textAPI = document.selection.createRange().text;
-          }
-        alert(textAPI);
-        langAPI = document.querySelector('#lang').value
-        alert(langAPI)
-        data = "key="+keyAPI+"&text="+textAPI+"&lang="+langAPI;
-        alert(data)
+    var xhr = new XMLHttpRequest();
+    // textAPI = document.querySelector('#source').value,
+    var textAPI = "";
+    if (window.getSelection) {
+        textAPI = window.getSelection().toString();
+    } 
+    else if (document.selection && document.selection.type != "Control") {
+        textAPI = document.selection.createRange().text;
+    }
+    alert(textAPI);
+    langAPI = document.querySelector('#lang').value
+    alert(langAPI)
+    data = "key="+keyAPI+"&text="+textAPI+"&lang="+langAPI;
+    alert(data)
 
     xhr.open("POST",url,true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
