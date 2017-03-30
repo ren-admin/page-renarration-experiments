@@ -16,15 +16,10 @@ is called, it injects CSS stylesheet into <head> element of website to stylize t
     var switchcss_container = document.createElement('div');
     switchcss_container.id = 'switchcss-container';
     body.appendChild(switchcss_container);
-
-  //appending content into the div inner HTML
-  document.getElementById('switchcss-container').
-  appendChild(
-    create_div(),
-    Translate_button(),
-    select_list(),
-    create_textArea());
-  
+    create_div()
+    Translate_button()
+    select_list()
+    create_textArea()
 }());
 
 function googleTranslateElementInit() {
@@ -34,8 +29,7 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 function create_div(){
      div = document.createElement('div');
      div.id = 'google_translate_element';
-     body = document.getElementsByTagName('body')[0];
-     body.appendChild(div);
+     document.getElementById('switchcss-container').appendChild(div);
 }
 
 function Translate_button(){
@@ -43,8 +37,7 @@ function Translate_button(){
      var text = document.createTextNode("Translate");
      button.id = 'lang_translate';
      button.appendChild(text);
-     body = document.getElementsByTagName('body')[0];
-     body.appendChild(button);
+     document.getElementById('switchcss-container').appendChild(button);
 }
 
 function select_list(){
@@ -55,8 +48,7 @@ function select_list(){
       var selectList = document.createElement("select");
       selectList.setAttribute("id", "lang");
       selectList.setAttribute("name", "to");
-      body = document.getElementsByTagName('body')[0];
-      body.appendChild(selectList);
+      document.getElementById('switchcss-container').appendChild(selectList);
       //Create and append the options
       for (var i = 0; i < array.length; i++) {
           var option = document.createElement("option");
@@ -71,8 +63,7 @@ function create_textArea() {
     output.id="textarea";
     var t = document.createTextNode("");
     output.appendChild(t);
-    body = document.getElementsByTagName('body')[0];
-    body.appendChild(output);
+    document.getElementById('switchcss-container').appendChild(output);
 }
 
 var url = "https://translate.yandex.net/api/v1.5/tr.json/translate",
