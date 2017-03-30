@@ -29,7 +29,8 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 function create_div(){
      div = document.createElement('div');
      div.id = 'google_translate_element';
-     document.getElementById('switchcss-container').appendChild(div);
+     body = document.getElementsByTagName('body')[0];
+     body.appendChild(div);
 }
 
 function Translate_button(){
