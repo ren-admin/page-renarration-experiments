@@ -1,3 +1,27 @@
+/* This function creates a continer div which lets the users interact with app. When switchcssContainer
+is called, it injects CSS stylesheet into <head> element of website to stylize the container and
+<div id=css-container>...</div> whose inner HTML is a list of options inside body. */
+
+(function switchcss_container(){
+    //appending a CSS stylesheet to head of webpage
+    var link = document.createElement('link');
+    // using rawgit.com MaxCDN.. files directly linked to git repo 'annoletjs/master'
+    link.rel = "stylesheet";
+    link.type = "text/css";
+    link.href = "https://rawgit.com/sadhanareddy/css-changer-tool/master/annolet.css"; //random version number removed bcoz some browser take it as text file and not as CSS.
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+    //appending a div to body of webpage
+    var body = document.getElementsByTagName('body')[0];
+    var switchcss_container = document.createElement('div');
+    switchcss_container.id = 'switchcss-container';
+    body.appendChild(switchcss_container);
+    create_div()
+    save_button()
+    highlight_button()
+}());
+
+
 // funtion to disable all links
 (function disableAllLinks(){
     var anchors = document.getElementsByTagName("a");
@@ -7,17 +31,24 @@
 }());
 
 (function setAttr() {
-	// var all = document.getElementsByTagName("*");
-	// for (var i=0, max=all.length; i < max; i++) {
- //        all[i].setAttribute("contenteditable", true);
- //        all[i].setAttribute("class", "edit");
-	// 	all[i].setAttribute("title", "editext");
-	// }
-	
 	document.getElementsByTagName('body')[0].setAttribute('contenteditable', true);
 	document.getElementsByTagName('body')[0].setAttribute('class', 'edit');
 	document.getElementsByTagName('body')[0].setAttribute('title', 'Edit Content');
+    // var all = document.getElementsByTagName("*");
+    // for (var i=0, max=all.length; i < max; i++) {
+ //        all[i].setAttribute("contenteditable", true);
+ //        all[i].setAttribute("class", "edit");
+    //  all[i].setAttribute("title", "editext");
+    // }
 }());
+
+function create_div(){
+    div = document.createElement('div');
+    var text = document.createTextNode('Edit the text and click to save for next time');
+    div.id = 'update';
+    div.appendChild(text);
+    document.getElementById('switchcss-container').appendChild(div);
+}
 
 function saveEdits() {
 	//get the editable element
@@ -36,31 +67,16 @@ function checkEdits() {
 	document.getElementsByClassName("edit").innerHTML = localStorage.userEdits;
 }
 
-
-(function createDiv(){
-     div = document.createElement('div');
-     var text = document.createTextNode('Edit the text and click to save for next time');
-     div.id = 'update';
-     div.appendChild(text);
-     body = document.getElementsByTagName('body')[0];
-     body.appendChild(div);
-}());
-
-(function Savebutton(){
-     button = document.createElement("BUTTON");
-     var text = document.createTextNode("Save Edits");
-     button.appendChild(text);
-     body = document.getElementsByTagName('body')[0];
-     body.appendChild(button);
-     button.onclick=function(){
+function save_button(){
+    button = document.createElement("BUTTON");
+    button.id = "save-edits"
+    var text = document.createTextNode("Save Edits");
+    button.appendChild(text);
+    button.onclick=function(){
      	saveEdits()
-     };
-}());
-
-// window.onload = function() {
-//   checkEdits()
-// };
-
+    };
+    document.getElementById('switchcss-container').appendChild(button);
+}
 
 function replaceImg(){
 	var image = document.getElementsByTagName("img");
@@ -70,25 +86,30 @@ function replaceImg(){
 }
 
 
-(function createTextArea() {
-    output = document.createElement("TEXTAREA");
-    output.id="textarea";
-    t = document.createTextNode("");
-    output.appendChild(t);
-    body = document.getElementsByTagName('body')[0];
-    body.appendChild(output);
-}());
+// (function createTextArea() {
+//     output = document.createElement("TEXTAREA");
+//     output.id="textarea";
+//     t = document.createTextNode("");
+//     output.appendChild(t);
+//     body = document.getElementsByTagName('body')[0];
+//     body.appendChild(output);
+// }());
 
+function highlight_button(){
+    high_button = document.createElement("BUTTON");
+    high_button.id = "highlight";
+    var text = document.createTextNode("Highlight Button");
+    high_button.appendChild(text);
+    document.getElementById('switchcss-container').appendChild(button);
+    button.onclick=function(){
+        highlight_content()
+    };
+}
 
-(function highlightButton(){
-     high_button = document.createElement("BUTTON");
-     high_button.id = "highlight";
-     var text = document.createTextNode("Highlight Button");
-     high_button.appendChild(text);
-     body = document.getElementsByTagName('body')[0];
-     body.appendChild(high_button);
-}());
-
+function highlight_content(){
+    var mytext = selectHTML();
+    $('span').css({"background-color":"yellow"});
+}
 
 function selectHTML() {
     try 
@@ -113,9 +134,6 @@ function selectHTML() {
     }
 }
 
-$(function() {
-    $('#highlight').click( function() {
-        var mytext = selectHTML();
-        $('span').css({"background-color":"yellow"});
-    });
-});
+
+
+
