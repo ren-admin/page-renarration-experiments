@@ -1,0 +1,233 @@
+#+title: Python app using selenium library to add the base javascript.
+#+AUTHOR: Raghav Mittal
+#+DATE: [2016-06-16 Thu]
+#+PROPERTY: results output
+#+PROPERTY: exports code
+#+SETUPFILE: ../org-templates/level-1.org
+#+options: ^:nil
+#+LATEX: Literal LaTeX code for export
+
+
+* Role
+
++ Role of this application is to take input URL and return the webpage with
+  required tools to transform the webpage
++ Input is the URL of the required webpage
++ output is the webpage plus the loaded javascript to transform the content on page
+
+
+* Imports
+
+** Imports for Python API
+Following imports are used for the flask app.
+
+#+BEGIN_SRC python :tangle ../../code/selenium/app.py :eval no
+
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from flask import Flask, request, render_template, make_response, session, jsonify, g, url_for, send_from_directory, \
+    redirect
+from flask_wtf import Form
+from wtforms import StringField, SubmitField, validators, ValidationError
+from wtforms.validators import Required,URL
+from flask_cors import CORS
+import conf
+
+app = Flask(__name__)
+CORS(app)
+
+
+app.config['SECRET_KEY'] = conf.SECRET_KEY[0]
+
+#+END_SRC
+
+
+* form
+
+The initial form used to take the input from the user .
++ It is mandatory for the user to enter the URL.
+
+#+BEGIN_SRC python :tangle ../../code/selenium/app.py :eval no
+
+class url_form(Form):
+    url = StringField('enter URL', validators=[Required(message="required"),URL(message="invalid input"),])
+    submit = SubmitField("TagIt")
+
+#+END_SRC
+
+
+* API
+
+The API used for the application .
++ renders the form for taking input URL.
+
+
+#+BEGIN_SRC python :tangle ../../code/selenium/app.py :eval no
+
+@app.route('/', methods=['GET','POST'])
+
+# first page that will ask user to enter the URL
+def index():
+
+    form = url_form()
+    if request.method == 'POST':
+        if form.validate() == False:
+            print "enter valid url"
+            return render_template('index.html', form=form)  # if URL is invalid, it will return to index
+        elif form.validate_on_submit():
+            global url
+            url = form.url.data
+            print url
+            abc = run_selenium(url) # redirecting to selenium to inject javascript and automate further process
+            return redirect(abc)
+
+    elif request.method == 'GET':
+        return render_template('index.html', form = form, title="Home")
+
+#+END_SRC
+
+
+* webdriver
+
++ Selenium webdriver is a web automation tool which is used to open webpage and inject javascript into DOM. That script will load Annolet.
++ Function =run_selenium= will get browser version, browser name, platform(windows/linux/mac) and user_agent string which will provide information about current browser in which user is logged in.
++ Then object of webdriver will be created which will trigger new browser window and open the URL given by user. 
++ It will wait(for maximum 30 seconds) for head of DOM to load completely and then inject JS into it.
+
+
+This function opens a new browser and injects the required javascript into the
+head section of the webpage.
+
+** Explanation
+
+This is brief explanation of key commands used in the webdriver.
+
+#+BEGIN_EXAMPLE
+driver = webdriver.Firefox()
+#+END_EXAMPLE
+The above example opens a new firefox browser .
+
+#+BEGIN_EXAMPLE
+head_element = WebDriverWait(driver, 30).until(lambda driver: driver.find_element_by_tag_name('head'))
+#+END_EXAMPLE
+The above line tell the driver to wait (max 30 seconds ) for the head section
+to load completely.
+
+** code
+
+#+BEGIN_SRC python :tangle ../../code/selenium/app.py :eval no
+
+# selenium webdriver in use
+
+def run_selenium(passed_url):
+    browser = request.user_agent.browser
+    version = request.user_agent.version and int(request.user_agent.version.split('.')[0])
+    platform = request.user_agent.platform
+    uas = request.user_agent.string
+
+    if 'OPR' in uas:
+        browser = 'Opera'
+        driver = webdriver.Opera()
+    elif browser == 'chrome':
+        browser = 'Chrome'
+
+        #locatio of chromedriver needed for running seenium on chrome browser. chromedriver is uploaded to github repo
+        driver = webdriver.Chrome(conf.CHROME_DRIVER_PATH[0])
+    elif browser == 'firefox':
+        browser == 'Firefox'
+        driver = webdriver.Firefox()  # for now works with firefox only
+
+    print browser
+
+    print (passed_url)
+
+    driver.get(passed_url) #passing url taken from form
+    print ("till here done")
+    head_element = WebDriverWait(driver, 30).until(lambda driver: driver.find_element_by_tag_name('head')) # waiting for page to atleast load <head> element fully so script could be injected
+    print ("done till here")
+    if head_element:
+        print ("injecting script")
+
+        # rawgit.com MaxCDN service used.. js file is at github repo annoletjs/master
+        driver.execute_script("!function(){function e(){script=document.createElement('script'),script.type='text/javascript',script.src='//rawgit.com/SSS-Studio-development/annoletjs/tagging/annolet_main.js',document.getElementsByTagName('head')[0].appendChild(script)}($=window.jQuery)?e():(script=document.createElement('script'),script.src='//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',script.onload=e,document.getElementsByTagName('head')[0].appendChild(script))}();")
+        print ("injected")
+    return 'annotate'
+@app.route('/annotate')
+def enjoy():
+    return render_template('after_load.html', title='enjoy')
+
+#+END_SRC
+
+
+It is successfully tested on Firefox and chrome browser.
+
+* run
+
+Running the application.
+
+#+BEGIN_SRC python :tangle ../../code/selenium/app.py :eval no
+
+if __name__ == '__main__':
+    app.run(host="127.0.0.1", port="8000")
+
+#+END_SRC
+
+
+* configuration
+
+Setting up the secret key for your application
+Adding path to chromedriver for Chrome browser support
+#+BEGIN_SRC python :tangle ../../code/selenium/conf.py :eval no
+SECRET_KEY = ('',) # some long string
+CHROME_DRIVER_PATH = ('',) #complete path to chromedriver
+#+END_SRC
+
+ 
+* Dependencies
+
+Following lists the dependencies required for the running the application
+
+#+BEGIN_SRC python :tangle ../../code/selenium/setup.sh :eval no
+
+#! bash script for setting up enviornment for flask app
+
+sudo apt-get install python-virtualenv
+
+virtualenv flask
+
+flask/bin/pip install flask
+
+flask/bin/pip install flask-wtf
+
+flask/bin/pip install selenium
+
+flask/bin/pip install conf
+
+flask/bin/pip install -U flask-cors
+
+#+END_SRC
+
+
+
+
+
+* Setup the server
+
+The following steps are needed for setting up the server
+
++ run the file setup.sh by command 
+#+BEGIN_EXAMPLE 
+bash setup.sh
+#+END_EXAMPLE
+
++ Enter your secret key in the conf.py file
+
++ Activate the virtual enviornment by command 
+#+BEGIN_EXAMPLE
+source flask/bin/activate
+#+END_EXAMPLE
+
++ run the application by command
+#+BEGIN_EXAMPLE
+python app.py
+#+END_EXAMPLE
